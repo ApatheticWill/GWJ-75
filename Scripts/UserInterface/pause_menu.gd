@@ -19,10 +19,10 @@ func _on_return_button_pressed() -> void:
 
 func _process(_delta: float) -> void:
 	
-	if Input.is_action_just_pressed("ui_cancel") and get_tree().paused == true:
+	if Input.is_action_just_pressed("ui_cancel") && get_tree().paused:
 		resume_game()
-	
-	if Input.is_action_just_pressed("ui_cancel") and get_tree().paused == false:
+		
+	elif Input.is_action_just_pressed("ui_cancel") && !get_tree().paused:
 		pause_game()
 
 func resume_game() -> void:

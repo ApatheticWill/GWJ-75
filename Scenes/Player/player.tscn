@@ -22,3 +22,15 @@ process_callback = 0
 limit_smoothed = true
 position_smoothing_enabled = true
 rotation_smoothing_enabled = true
+
+[node name="Timers" type="Node" parent="."]
+
+[node name="CoyoteTimer" type="Timer" parent="Timers"]
+wait_time = 0.065
+one_shot = true
+
+[node name="BufferTimer" type="Timer" parent="Timers"]
+wait_time = 0.1
+one_shot = true
+
+[connection signal="timeout" from="Timers/BufferTimer" to="." method="_on_buffer_timer_timeout"]
