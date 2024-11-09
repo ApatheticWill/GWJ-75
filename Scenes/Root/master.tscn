@@ -1,3 +1,63 @@
-[gd_scene format=3 uid="uid://tljxvprshpm0"]
+[gd_scene load_steps=6 format=4 uid="uid://tljxvprshpm0"]
+
+[ext_resource type="Texture2D" uid="uid://iplgob1wmjvl" path="res://Assets/Tileset/project_memory.platformer_tileset.png" id="1_utggq"]
+[ext_resource type="PackedScene" uid="uid://dl46lbkpkobmu" path="res://Scenes/Player/player.tscn" id="2_58ltc"]
+[ext_resource type="PackedScene" uid="uid://c752ye2qiju3r" path="res://Scenes/UserInterface/gui.tscn" id="3_mtnaf"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mp2nb"]
+texture = ExtResource("1_utggq")
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -4.8, 8, -4.8, 8, 8, -8, 8)
+1:0/0 = 0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -4.8, 8, -4.8, 8, 8, -8, 8)
+2:0/0 = 0
+2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -4.8, 8, -4.8, 8, 8, -8, 8)
+5:0/0 = 0
+6:0/0 = 0
+7:0/0 = 0
+0:1/0 = 0
+0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+1:1/0 = 0
+1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+2:1/0 = 0
+2:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+5:1/0 = 0
+7:1/0 = 0
+0:2/0 = 0
+0:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+1:2/0 = 0
+1:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+2:2/0 = 0
+2:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+5:2/0 = 0
+6:2/0 = 0
+7:2/0 = 0
+0:4/0 = 0
+2:4/0 = 0
+3:4/0 = 0
+6:4/0 = 0
+0:5/0 = 0
+2:5/0 = 0
+3:5/0 = 0
+0:6/0 = 0
+2:6/0 = 0
+3:6/0 = 0
+5:6/0 = 0
+6:6/0 = 0
+7:6/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_fl10p"]
+physics_layer_0/collision_layer = 1
+physics_layer_0/collision_mask = 0
+sources/0 = SubResource("TileSetAtlasSource_mp2nb")
 
 [node name="Master" type="Node"]
+
+[node name="PlaceholderLayer" type="TileMapLayer" parent="."]
+tile_map_data = PackedByteArray("AAAGAAQAAAAAAAAAAAAHAAQAAAABAAAAAAAIAAQAAAABAAAAAAAJAAQAAAABAAAAAAAKAAQAAAABAAAAAAALAAQAAAABAAAAAAAMAAQAAAABAAAAAAANAAQAAAABAAAAAAAOAAQAAAACAAAAAAAOAAUAAAACAAIAAAANAAUAAAABAAIAAAAMAAUAAAABAAIAAAALAAUAAAABAAIAAAAKAAUAAAABAAIAAAAJAAUAAAABAAIAAAAIAAUAAAABAAIAAAAHAAUAAAABAAIAAAAGAAUAAAAAAAIAAAASAAQAAAAAAAAAAAAUAAQAAAABAAAAAAATAAQAAAABAAAAAAAVAAQAAAABAAAAAAAWAAQAAAACAAAAAAAWAAUAAAACAAIAAAASAAUAAAAAAAIAAAATAAUAAAABAAIAAAAUAAUAAAABAAIAAAAVAAUAAAABAAIAAAAMAAEAAAACAAIAAAAJAAEAAAAAAAIAAAALAAEAAAABAAIAAAAKAAEAAAABAAIAAAAMAAAAAAACAAAAAAALAAAAAAABAAAAAAAJAAAAAAAAAAAAAAAKAAAAAAABAAAAAAA=")
+tile_set = SubResource("TileSet_fl10p")
+
+[node name="Player" parent="." instance=ExtResource("2_58ltc")]
+position = Vector2(113, 49)
+
+[node name="GUI" parent="." instance=ExtResource("3_mtnaf")]
