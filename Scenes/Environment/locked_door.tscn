@@ -1,0 +1,32 @@
+[gd_scene load_steps=5 format=3 uid="uid://csqerh6fywqbl"]
+
+[ext_resource type="Script" path="res://Scripts/Environment/locked_door.gd" id="1_s4fue"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_axr55"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qyq0s"]
+size = Vector2(24, 48)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_w33le"]
+size = Vector2(50, 48)
+
+[node name="LockedDoor" type="StaticBody2D"]
+collision_mask = 2
+script = ExtResource("1_s4fue")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(24, 48)
+texture = SubResource("CanvasTexture_axr55")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_qyq0s")
+
+[node name="InteractionArea" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea"]
+shape = SubResource("RectangleShape2D_w33le")
+
+[connection signal="body_entered" from="InteractionArea" to="." method="_on_interaction_area_body_entered"]
+[connection signal="body_exited" from="InteractionArea" to="." method="_on_interaction_area_body_exited"]
