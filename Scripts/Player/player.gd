@@ -5,13 +5,17 @@ class_name Player
 @onready var movement_direction : float
 @onready var turn_direction : float
 @onready var jump_force : float = -300.0
-@onready var gravity : float = 1000.0
+@onready var gravity : float = 700.0
 @onready var fall_gravity : float = 1500.0
 @onready var buffered_jump : bool = false
 @onready var sprite_2d: Sprite2D = $Sprite2D
 @onready var coyote_timer: Timer = $Timers/CoyoteTimer
 @onready var buffer_timer: Timer = $Timers/BufferTimer
+@export var playerCameraActive: bool = true
 
+func _ready():
+	if !playerCameraActive:
+		$Camera2D.queue_free()
 
 func _physics_process(delta: float) -> void:
 	
