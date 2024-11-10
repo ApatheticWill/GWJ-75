@@ -61,10 +61,8 @@ tile_set = SubResource("TileSet_fl10p")
 [node name="Player" parent="." instance=ExtResource("2_58ltc")]
 position = Vector2(-92, 81)
 
-[node name="GUI" parent="." instance=ExtResource("3_mtnaf")]
-
 [node name="LockedDoor" parent="." instance=ExtResource("4_uapo7")]
-position = Vector2(249, 40)
+position = Vector2(248, 40)
 
 [node name="Label" type="Label" parent="."]
 offset_left = 112.0
@@ -73,3 +71,5 @@ offset_right = 175.0
 offset_bottom = 24.0
 theme_override_font_sizes/font_size = 7
 text = "Mirror will be here"
+
+[node name="GUI" parent="." instance=ExtResource("3_mtnaf")]
