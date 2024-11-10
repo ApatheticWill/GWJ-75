@@ -6,7 +6,7 @@ class_name Player
 @onready var turn_direction : float
 @onready var jump_force : float = -260.0
 @onready var gravity : float = 1000.0
-@onready var fall_gravity : float = 1700.0
+@onready var fall_gravity : float = 1600.0
 @onready var buffered_jump : bool = false
 @onready var can_move : bool = true
 @onready var can_jump : bool = true

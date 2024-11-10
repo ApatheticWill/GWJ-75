@@ -2,9 +2,9 @@ extends Control
 class_name DialogueBox
 
 @onready var player : Player = get_tree().get_first_node_in_group("Player")
-@onready var read_rate : float = 0.05
+@onready var read_rate : float = 0.03
 @onready var text_tween : Tween
-@onready var text_display : Label = $TextBox/Label
+@onready var text_display : RichTextLabel = $TextBox/Label
 
 func _ready() -> void:
 	
