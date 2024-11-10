@@ -11,6 +11,12 @@ class_name Player
 @onready var sprite_2d: Sprite2D = $Sprite2D
 @onready var coyote_timer: Timer = $Timers/CoyoteTimer
 @onready var buffer_timer: Timer = $Timers/BufferTimer
+@onready var camera: Camera2D = $Camera2D
+@export var activeCamera : bool = true;
+
+func _ready():
+	if !activeCamera:
+		camera.queue_free()
 
 
 func _physics_process(delta: float) -> void:

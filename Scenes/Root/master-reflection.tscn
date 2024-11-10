@@ -1,0 +1,105 @@
+[gd_scene load_steps=12 format=4 uid="uid://dci3gnbbna5lp"]
+
+[ext_resource type="Script" path="res://Scripts/Environment/master_reflection.gd" id="1_3i05k"]
+[ext_resource type="Texture2D" uid="uid://iplgob1wmjvl" path="res://Assets/Tileset/project_memory.platformer_tileset.png" id="1_44so8"]
+[ext_resource type="PackedScene" uid="uid://dl46lbkpkobmu" path="res://Scenes/Player/player.tscn" id="2_0to0j"]
+[ext_resource type="PackedScene" uid="uid://c752ye2qiju3r" path="res://Scenes/UserInterface/gui.tscn" id="3_2pkxv"]
+[ext_resource type="Script" path="res://Scenes/Root/cameraFollowPlayer.gd" id="5_7f03y"]
+[ext_resource type="PackedScene" uid="uid://cdp0evjujptj2" path="res://Scenes/Environment/enemy.tscn" id="6_75ue1"]
+[ext_resource type="PackedScene" uid="uid://cpt05slq8533s" path="res://Scenes/Environment/playerReflection.tscn" id="6_l50mv"]
+[ext_resource type="PackedScene" uid="uid://bp4sas21ixoqm" path="res://Scenes/Environment/points.tscn" id="7_q1n4d"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mp2nb"]
+texture = ExtResource("1_44so8")
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -4.8, 8, -4.8, 8, 8, -8, 8)
+1:0/0 = 0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -4.8, 8, -4.8, 8, 8, -8, 8)
+2:0/0 = 0
+2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -4.8, 8, -4.8, 8, 8, -8, 8)
+5:0/0 = 0
+6:0/0 = 0
+7:0/0 = 0
+0:1/0 = 0
+0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+1:1/0 = 0
+1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+2:1/0 = 0
+2:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+5:1/0 = 0
+7:1/0 = 0
+0:2/0 = 0
+0:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+1:2/0 = 0
+1:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+2:2/0 = 0
+2:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+5:2/0 = 0
+6:2/0 = 0
+7:2/0 = 0
+0:4/0 = 0
+2:4/0 = 0
+3:4/0 = 0
+6:4/0 = 0
+0:5/0 = 0
+2:5/0 = 0
+3:5/0 = 0
+0:6/0 = 0
+2:6/0 = 0
+3:6/0 = 0
+5:6/0 = 0
+6:6/0 = 0
+7:6/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_fl10p"]
+physics_layer_0/collision_layer = 1
+physics_layer_0/collision_mask = 0
+sources/0 = SubResource("TileSetAtlasSource_mp2nb")
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_82ye6"]
+
+[node name="Master" type="Node2D"]
+script = ExtResource("1_3i05k")
+
+[node name="PlaceholderLayer" type="TileMapLayer" parent="."]
+tile_map_data = PackedByteArray("AADy//v/AAABAAEAAADz//v/AAABAAEAAAD0//v/AAABAAEAAADx//z/AAABAAEAAADy//z/AAABAAEAAADz//z/AAABAAEAAAD0//z/AAABAAEAAAD1//z/AAABAAEAAAD4//7/AAABAAEAAAD5//7/AAABAAEAAAD6//7/AAABAAEAAAD7//7/AAABAAEAAAD9//v/AAABAAEAAAD+//v/AAABAAEAAAD///v/AAABAAEAAAAAAPv/AAABAAEAAAABAPv/AAABAAEAAAD4//j/AAABAAEAAAD5//j/AAABAAEAAAD6//j/AAABAAEAAAADAPz/AAABAAEAAAAEAPz/AAABAAEAAAAFAPz/AAABAAEAAAAGAPz/AAABAAEAAAAIAPr/AAABAAEAAAAJAPr/AAABAAEAAAANAP//AAABAAEAAAAOAP//AAABAAEAAAAPAP//AAABAAEAAAAQAP//AAABAAEAAAARAP//AAABAAEAAAAMAP//AAABAAEAAAALAP//AAABAAEAAAASAP//AAABAAEAAAAHAPz/AAABAAEAAAAIAPz/AAABAAEAAAAJAPz/AAABAAEAAAA=")
+tile_set = SubResource("TileSet_fl10p")
+
+[node name="Player" parent="." instance=ExtResource("2_0to0j")]
+position = Vector2(-198, -93)
+activeCamera = false
+
+[node name="GUI" parent="." instance=ExtResource("3_2pkxv")]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+script = ExtResource("5_7f03y")
+
+[node name="Enemy2" parent="." instance=ExtResource("6_75ue1")]
+position = Vector2(-70, -46)
+move = true
+x_start = -119
+y_start = 44
+x_final = -70
+y_final = 44
+seconds = 2.0
+
+[node name="Enemy4" parent="." instance=ExtResource("6_75ue1")]
+position = Vector2(65, -27)
+move = true
+x_start = 57
+y_start = 74
+x_final = 151
+y_final = 74
+seconds = 2.0
+
+[node name="paint" parent="." instance=ExtResource("7_q1n4d")]
+position = Vector2(-101, 144)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(249, 40)
+scale = Vector2(24, 48)
+texture = SubResource("CanvasTexture_82ye6")
+
+[node name="Area2D" parent="." node_paths=PackedStringArray("player", "controller") instance=ExtResource("6_l50mv")]
+player = NodePath("../Player")
+controller = NodePath("..")
