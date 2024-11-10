@@ -1,9 +1,10 @@
 extends Control
 class_name DialogueBox
 
-@onready var read_rate : float = 0.05
+@onready var player : Player = get_tree().get_first_node_in_group("Player")
+@onready var read_rate : float = 0.03
 @onready var text_tween : Tween
-@onready var text_display : Label = $TextBox/Label
+@onready var text_display : RichTextLabel = $TextBox/Label
 
 func _ready() -> void:
 	
@@ -14,9 +15,12 @@ func _ready() -> void:
 func _process(_delta: float) -> void:
 	
 	if text_tween != null:
+		
 		if text_tween.finished && text_display.visible_ratio == 1.0:
+			player.can_move = true
 			await get_tree().create_timer(1).timeout
 			hide_dialogue_box()
+	
 
 func on_text_to_display(next_text : String) -> void:
 	
@@ -24,6 +28,7 @@ func on_text_to_display(next_text : String) -> void:
 
 func display_text(displayed_text : String) -> void:
 	
+	player.can_move = false
 	text_tween = create_tween()
 	text_display.text = displayed_text
 	show_dialogue_box()

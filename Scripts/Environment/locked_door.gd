@@ -1,13 +1,15 @@
 extends StaticBody2D
 class_name LockedDoor
 
+@export_multiline var displayed_text : String
+
 @onready var can_interact : bool = false
 @onready var is_locked : bool = true
 
 func _unhandled_key_input(event: InputEvent) -> void:
 	
 	if event.is_action_pressed("interact") && can_interact && is_locked:
-		Eventbus.text_to_display.emit("To proceed, one must face their darkest parts.")
+		Eventbus.text_to_display.emit(displayed_text)
 	elif event.is_action_pressed("interact") && can_interact && !is_locked:
 		self.queue_free()
 
