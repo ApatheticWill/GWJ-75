@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=4 uid="uid://dci3gnbbna5lp"]
+[gd_scene load_steps=13 format=4 uid="uid://dci3gnbbna5lp"]
 
 [ext_resource type="Script" path="res://Scripts/Environment/master_reflection.gd" id="1_3i05k"]
 [ext_resource type="Texture2D" uid="uid://iplgob1wmjvl" path="res://Assets/Tileset/project_memory.platformer_tileset.png" id="1_44so8"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://cpt05slq8533s" path="res://Scenes/Environment/playerReflection.tscn" id="6_l50mv"]
 [ext_resource type="PackedScene" uid="uid://bp4sas21ixoqm" path="res://Scenes/Environment/points.tscn" id="7_q1n4d"]
 [ext_resource type="PackedScene" uid="uid://bmdyawfvqn5o8" path="res://Scenes/Environment/door_reflection.tscn" id="9_5qaf0"]
+[ext_resource type="AudioStream" uid="uid://bx8vwd0lxcsdr" path="res://Assets/Sound/Music/GWJ75_darkerzonetest.mp3" id="10_sbpb0"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mp2nb"]
 texture = ExtResource("1_44so8")
@@ -102,3 +103,10 @@ controller = NodePath("..")
 
 [node name="DoorReflection" parent="." node_paths=PackedStringArray("controller") instance=ExtResource("9_5qaf0")]
 controller = NodePath("..")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("10_sbpb0")
+volume_db = -8.0
+autoplay = true
+bus = &"Music"
+parameters/looping = true

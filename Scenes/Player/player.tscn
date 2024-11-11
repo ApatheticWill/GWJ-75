@@ -1,14 +1,27 @@
-[gd_scene load_steps=4 format=3 uid="uid://dl46lbkpkobmu"]
+[gd_scene load_steps=10 format=3 uid="uid://dl46lbkpkobmu"]
 
-[ext_resource type="Script" path="res://Scripts/Player/player.gd" id="1_1axt6"]
 [ext_resource type="Texture2D" uid="uid://dpfp2wk2eusrs" path="res://Assets/Player/D&L.reference_dummy.png" id="1_5n1dc"]
+[ext_resource type="Script" path="res://player_2.gd" id="1_n283e"]
+[ext_resource type="AudioStream" uid="uid://biyriars5u1eo" path="res://Assets/Sound/SFX/Player/GWJ75_walk1.mp3" id="3_kmy7d"]
+[ext_resource type="AudioStream" uid="uid://bjokmmolqdi8o" path="res://Assets/Sound/SFX/Player/GWJ75_walk2.mp3" id="4_ao87a"]
+[ext_resource type="AudioStream" uid="uid://cokmuh1wswcx4" path="res://Assets/Sound/SFX/Player/GWJ75_walk3.mp3" id="5_eknax"]
+[ext_resource type="AudioStream" uid="uid://b28o52fq8l3tp" path="res://Assets/Sound/SFX/Player/GWJ75_walk4.mp3" id="6_hovrf"]
+[ext_resource type="AudioStream" uid="uid://c641njc7g60jr" path="res://Assets/Sound/SFX/Player/Player_CBswing1.mp3" id="7_pj2u4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_e0fj2"]
 size = Vector2(10, 28)
 
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_fh0ee"]
+random_pitch = 1.3
+streams_count = 4
+stream_0/stream = ExtResource("3_kmy7d")
+stream_1/stream = ExtResource("4_ao87a")
+stream_2/stream = ExtResource("5_eknax")
+stream_3/stream = ExtResource("6_hovrf")
+
 [node name="Player" type="CharacterBody2D" groups=["Player"]]
 collision_layer = 2
-script = ExtResource("1_1axt6")
+script = ExtResource("1_n283e")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_e0fj2")
@@ -32,5 +45,21 @@ one_shot = true
 [node name="BufferTimer" type="Timer" parent="Timers"]
 wait_time = 0.1
 one_shot = true
+
+[node name="Walk" type="AudioStreamPlayer2D" parent="."]
+stream = SubResource("AudioStreamRandomizer_fh0ee")
+volume_db = -6.2
+bus = &"SFXEnv"
+
+[node name="Jump" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("7_pj2u4")
+volume_db = -6.0
+pitch_scale = 1.71
+
+[node name="Fall" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_ao87a")
+volume_db = 2.0
+pitch_scale = 0.4
+bus = &"SFXEnv"
 
 [connection signal="timeout" from="Timers/BufferTimer" to="." method="_on_buffer_timer_timeout"]
