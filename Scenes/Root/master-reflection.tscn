@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://cdp0evjujptj2" path="res://Scenes/Environment/enemy.tscn" id="6_75ue1"]
 [ext_resource type="PackedScene" uid="uid://cpt05slq8533s" path="res://Scenes/Environment/playerReflection.tscn" id="6_l50mv"]
 [ext_resource type="PackedScene" uid="uid://bp4sas21ixoqm" path="res://Scenes/Environment/points.tscn" id="7_q1n4d"]
+[ext_resource type="PackedScene" uid="uid://bmdyawfvqn5o8" path="res://Scenes/Environment/door_reflection.tscn" id="9_5qaf0"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mp2nb"]
 texture = ExtResource("1_44so8")
@@ -56,8 +57,6 @@ physics_layer_0/collision_layer = 1
 physics_layer_0/collision_mask = 0
 sources/0 = SubResource("TileSetAtlasSource_mp2nb")
 
-[sub_resource type="CanvasTexture" id="CanvasTexture_82ye6"]
-
 [node name="Master" type="Node2D"]
 script = ExtResource("1_3i05k")
 lives = 1
@@ -97,11 +96,9 @@ seconds = 2.0
 [node name="paint" parent="." instance=ExtResource("7_q1n4d")]
 position = Vector2(-101, 144)
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(249, 40)
-scale = Vector2(24, 48)
-texture = SubResource("CanvasTexture_82ye6")
-
 [node name="Area2D" parent="." node_paths=PackedStringArray("player", "controller") instance=ExtResource("6_l50mv")]
 player = NodePath("../Player")
+controller = NodePath("..")
+
+[node name="DoorReflection" parent="." node_paths=PackedStringArray("controller") instance=ExtResource("9_5qaf0")]
 controller = NodePath("..")

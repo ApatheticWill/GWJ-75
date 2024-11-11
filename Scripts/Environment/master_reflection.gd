@@ -12,7 +12,8 @@ func life_lost():
 		reset_level()
 
 func point_collected():
-	remaining_points -= 1
+	remaining_points = max(0,remaining_points-1)
+	
 
 func reset_level():
 	get_tree().reload_current_scene()
