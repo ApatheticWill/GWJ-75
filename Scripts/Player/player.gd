@@ -1,7 +1,9 @@
 extends CharacterBody2D
 class_name Player
 
-@onready var movement_speed : int = 100
+@onready var movement_speed : int = 85
+@onready var acceleration : int = 400
+@onready var friction : int = 500
 @onready var movement_direction : float
 @onready var turn_direction : float
 @onready var jump_force : float = -260.0
@@ -13,11 +15,21 @@ class_name Player
 @onready var sprite_2d: Sprite2D = $Sprite2D
 @onready var coyote_timer: Timer = $Timers/CoyoteTimer
 @onready var buffer_timer: Timer = $Timers/BufferTimer
+@onready var camera: Camera2D = $Camera2D
+@export var activeCamera : bool = true;
+@onready var levelcontroller : Node2D;
+
+func _ready():
+	if !activeCamera:
+		camera.queue_free()
+		levelcontroller = get_parent()
 
 func _physics_process(delta: float) -> void:
-	
+	if !activeCamera && position.y >= 5:
+		levelcontroller.reset_level()
+		
 	handle_jump()
-	handle_movement()
+	handle_movement(delta)
 	
 	if !is_on_floor() && !coyote_timer.time_left:
 		can_jump = false
@@ -42,14 +54,14 @@ func _physics_process(delta: float) -> void:
 		buffered_jump = true
 		buffer_timer.start()
 
-func handle_movement() -> void:
+func handle_movement(delta : float) -> void:
 	
 	movement_direction = Input.get_axis("move_left", "move_right")
 	
 	if movement_direction && can_move:
-		velocity.x = movement_direction * movement_speed
+		velocity.x = move_toward(velocity.x, movement_direction * movement_speed, acceleration * delta)
 	else:
-		velocity.x = 0
+		velocity.x = move_toward(velocity.x, 0, friction * delta)
 
 func handle_jump() -> void:
 	
