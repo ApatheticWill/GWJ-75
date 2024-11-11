@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://dl46lbkpkobmu" path="res://Scenes/Player/player.tscn" id="2_58ltc"]
 [ext_resource type="PackedScene" uid="uid://c752ye2qiju3r" path="res://Scenes/UserInterface/gui.tscn" id="3_mtnaf"]
 [ext_resource type="PackedScene" uid="uid://csqerh6fywqbl" path="res://Scenes/Environment/locked_door.tscn" id="4_uapo7"]
-[ext_resource type="AudioStream" uid="uid://bik2ms0pp3noh" path="res://Assets/Sound/Music/GWJ75_themeodrateste.mp3" id="5_qybsi"]
+[ext_resource type="AudioStream" uid="uid://cp652lmqe35tf" path="res://Assets/Sound/Music/GWJ75_thememainteste.mp3" id="5_cako1"]
 [ext_resource type="AudioStream" uid="uid://dgul1m8dqgpk2" path="res://Assets/Sound/SFX/Enviroment/Drops1.mp3" id="6_53i8a"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mp2nb"]
@@ -181,15 +181,15 @@ position = Vector2(2314, 348)
 [node name="GUI" parent="." instance=ExtResource("3_mtnaf")]
 
 [node name="Music" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("5_qybsi")
+stream = ExtResource("5_cako1")
 volume_db = -8.0
 autoplay = true
 bus = &"Music"
 parameters/looping = true
 
 [node name="WaterDrops" type="AudioStreamPlayer2D" parent="."]
-position = Vector2(2669, 363)
+position = Vector2(2661, 363)
 stream = ExtResource("6_53i8a")
 autoplay = true
-max_distance = 500.0
+max_distance = 200.0
 parameters/looping = true

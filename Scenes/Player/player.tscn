@@ -49,17 +49,20 @@ one_shot = true
 [node name="Walk" type="AudioStreamPlayer2D" parent="."]
 stream = SubResource("AudioStreamRandomizer_fh0ee")
 volume_db = -6.2
+max_distance = 100.0
 bus = &"SFXEnv"
 
 [node name="Jump" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("7_pj2u4")
 volume_db = -6.0
 pitch_scale = 1.71
+max_distance = 50.0
 
 [node name="Fall" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("4_ao87a")
 volume_db = 2.0
-pitch_scale = 0.4
+pitch_scale = 0.46
+max_distance = 150.0
 bus = &"SFXEnv"
 
 [connection signal="timeout" from="Timers/BufferTimer" to="." method="_on_buffer_timer_timeout"]
