@@ -16,6 +16,8 @@ func point_collected():
 	
 
 func reset_level():
+	
+	await get_tree().create_timer(0.1).timeout
 	get_tree().reload_current_scene()
 
 func level_completed():
