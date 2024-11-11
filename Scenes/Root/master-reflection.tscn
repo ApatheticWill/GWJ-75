@@ -68,7 +68,7 @@ tile_map_data = PackedByteArray("AADy//v/AAABAAEAAADz//v/AAABAAEAAAD0//v/AAABAAE
 tile_set = SubResource("TileSet_fl10p")
 
 [node name="Player" parent="." instance=ExtResource("2_0to0j")]
-position = Vector2(-198, -93)
+position = Vector2(-199, -111)
 activeCamera = false
 
 [node name="GUI" parent="." instance=ExtResource("3_2pkxv")]
@@ -106,7 +106,7 @@ controller = NodePath("..")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("10_sbpb0")
-volume_db = -8.0
+volume_db = -13.0
 autoplay = true
 bus = &"Music"
 parameters/looping = true
