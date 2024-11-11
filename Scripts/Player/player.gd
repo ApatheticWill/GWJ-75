@@ -15,13 +15,17 @@ class_name Player
 @onready var buffer_timer: Timer = $Timers/BufferTimer
 @onready var camera: Camera2D = $Camera2D
 @export var activeCamera : bool = true;
+@onready var levelcontroller : Node2D;
 
 func _ready():
 	if !activeCamera:
 		camera.queue_free()
+		levelcontroller = get_parent()
 
 func _physics_process(delta: float) -> void:
-	
+	if !activeCamera && position.y >= 5:
+		levelcontroller.reset_level()
+		
 	handle_jump()
 	handle_movement()
 	
