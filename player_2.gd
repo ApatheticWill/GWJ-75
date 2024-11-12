@@ -17,7 +17,7 @@ class_name Player
 @onready var buffer_timer: Timer = $Timers/BufferTimer
 @onready var camera: Camera2D = $Camera2D
 @export var activeCamera : bool = true
-@onready var levelcontroller : Node2D # Wtf?
+@onready var levelcontroller : master_reflection # Wtf?
 
 ## Sound stuff
 @onready var Walk = $Walk
