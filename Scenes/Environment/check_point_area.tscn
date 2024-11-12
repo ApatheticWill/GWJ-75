@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://fhyj430wdef8"]
 
-[ext_resource type="Script" path="res://Scenes/Environment/check_point_area.gd" id="1_dhq3p"]
+[ext_resource type="Script" path="res://Scripts/Environment/check_point_area.gd" id="1_dhq3p"]
 
 [node name="CheckPointArea" type="Area2D"]
 collision_layer = 0

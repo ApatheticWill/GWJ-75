@@ -9,7 +9,7 @@ class_name LockedDoor
 func _unhandled_key_input(event: InputEvent) -> void:
 	
 	if event.is_action_pressed("interact") && can_interact && is_locked:
-		Eventbus.text_to_display.emit(displayed_text)
+		Eventbus.text_to_display.emit(displayed_text, "", "")
 	elif event.is_action_pressed("interact") && can_interact && !is_locked:
 		self.queue_free()
 

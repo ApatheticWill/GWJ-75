@@ -5,6 +5,14 @@ class_name DialogueBox
 @onready var read_rate : float = 0.03
 @onready var text_tween : Tween
 @onready var text_display : RichTextLabel = $TextBox/Label
+@onready var current_state := TextState.READY
+@onready var text_queue := []
+
+enum TextState{
+	READY,
+	READING,
+	FINISHED
+}
 
 func _ready() -> void:
 	
@@ -14,21 +22,43 @@ func _ready() -> void:
 
 func _process(_delta: float) -> void:
 	
+	match current_state:
+		TextState.READY:
+			if !text_queue.is_empty():
+				player.can_move = false
+				display_text()
+			else:
+				player.can_move = true
+		TextState.READING:
+			pass
+		TextState.FINISHED:
+			change_text_state(TextState.READY)
+			hide_dialogue_box()
+	
+	
 	if text_tween != null:
 		
 		if text_tween.finished && text_display.visible_ratio == 1.0:
 			player.can_move = true
-			await get_tree().create_timer(1).timeout
-			hide_dialogue_box()
-	
+			await get_tree().create_timer(0.5).timeout
+			change_text_state(TextState.FINISHED)
 
-func on_text_to_display(next_text : String) -> void:
+func on_text_to_display(first_text : String, second_text : String, third_text : String) -> void:
 	
-	display_text(next_text)
+	if first_text != "":
+		queue_text(first_text)
+	if second_text != "":
+		queue_text(second_text)
+	if third_text != "":
+		queue_text(third_text)
 
-func display_text(displayed_text : String) -> void:
+func queue_text(next_text : String) -> void:
+	text_queue.push_back(next_text)
+
+func display_text() -> void:
 	
-	player.can_move = false
+	var displayed_text = text_queue.pop_front()
+	change_text_state(TextState.READING)
 	text_tween = create_tween()
 	text_display.text = displayed_text
 	show_dialogue_box()
@@ -44,3 +74,6 @@ func show_dialogue_box() -> void:
 	
 	text_display.show()
 	self.show()
+
+func change_text_state(next_state) -> void:
+	current_state = next_state

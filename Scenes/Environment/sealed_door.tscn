@@ -1,0 +1,33 @@
+[gd_scene load_steps=5 format=3 uid="uid://cpy24sww483rp"]
+
+[ext_resource type="Script" path="res://Scripts/Environment/sealed_door.gd" id="1_dg3el"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pc3un"]
+size = Vector2(24, 48)
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_0bh1y"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1rlh2"]
+size = Vector2(56, 48)
+
+[node name="SealedDoor" type="StaticBody2D"]
+collision_mask = 2
+script = ExtResource("1_dg3el")
+displayed_text = "[center]Sealed by a strange power...[/center]"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_pc3un")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(24, 48)
+texture = SubResource("CanvasTexture_0bh1y")
+
+[node name="InteractionZone" type="Area2D" parent="."]
+collision_layer = 4
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionZone"]
+shape = SubResource("RectangleShape2D_1rlh2")
+
+[connection signal="body_entered" from="InteractionZone" to="." method="_on_interaction_zone_body_entered"]
+[connection signal="body_exited" from="InteractionZone" to="." method="_on_interaction_zone_body_exited"]

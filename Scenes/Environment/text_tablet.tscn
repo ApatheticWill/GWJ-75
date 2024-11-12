@@ -1,0 +1,37 @@
+[gd_scene load_steps=5 format=3 uid="uid://deal06fk0k00g"]
+
+[ext_resource type="Script" path="res://Scripts/Environment/text_tablet.gd" id="1_4lxfn"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_usrpv"]
+size = Vector2(8, 8)
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_10sib"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rnsmu"]
+size = Vector2(88, 42)
+
+[node name="TextTablet" type="RigidBody2D"]
+collision_layer = 0
+collision_mask = 2
+freeze = true
+freeze_mode = 1
+script = ExtResource("1_4lxfn")
+first_displayed_text = "[center]One must face three [shake][color=purple]Great Sins[/color][/shake] to be [wave]absolved[/wave] of their regrets.[/center]"
+informative_text = "[center]Somewhere a powerful seal has been broken.[/center]"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_usrpv")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(8, 8)
+texture = SubResource("CanvasTexture_10sib")
+
+[node name="InteractionZone" type="Area2D" parent="."]
+collision_layer = 4
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionZone"]
+shape = SubResource("RectangleShape2D_rnsmu")
+
+[connection signal="body_entered" from="InteractionZone" to="." method="_on_interaction_zone_body_entered"]
+[connection signal="body_exited" from="InteractionZone" to="." method="_on_interaction_zone_body_exited"]
