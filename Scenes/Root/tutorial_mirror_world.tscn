@@ -1,12 +1,13 @@
-[gd_scene load_steps=11 format=4 uid="uid://c1u023ba8bar0"]
+[gd_scene load_steps=12 format=4 uid="uid://cj1pocqysfsli"]
 
 [ext_resource type="Script" path="res://Scripts/Root/tutorial_mirror_world.gd" id="1_j75q7"]
 [ext_resource type="Texture2D" uid="uid://iplgob1wmjvl" path="res://Assets/Tileset/project_memory.platformer_tileset.png" id="1_tg3v0"]
 [ext_resource type="PackedScene" uid="uid://dl46lbkpkobmu" path="res://Scenes/Player/player.tscn" id="2_j3en6"]
 [ext_resource type="PackedScene" uid="uid://cpt05slq8533s" path="res://Scenes/Environment/playerReflection.tscn" id="3_11xrf"]
-[ext_resource type="PackedScene" uid="uid://bp4sas21ixoqm" path="res://Scenes/Environment/heart.tscn" id="5_ox470"]
+[ext_resource type="PackedScene" path="res://Scenes/Environment/heart.tscn" id="5_ox470"]
 [ext_resource type="PackedScene" uid="uid://bmdyawfvqn5o8" path="res://Scenes/Environment/door_reflection.tscn" id="6_wxuth"]
-[ext_resource type="PackedScene" uid="uid://d0auovkxv4oql" path="res://Scenes/Environment/reflection_hazard.tscn" id="7_dincc"]
+[ext_resource type="PackedScene" path="res://Scenes/Environment/reflection_hazard.tscn" id="7_dincc"]
+[ext_resource type="AudioStream" uid="uid://bx8vwd0lxcsdr" path="res://Assets/Sound/Music/GWJ75_darkerzonetest.mp3" id="8_s1748"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0icmu"]
 texture = ExtResource("1_tg3v0")
@@ -86,3 +87,9 @@ collision_mask = 0
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ReflectionHazard"]
 shape = SubResource("RectangleShape2D_j20xr")
 debug_color = Color(0.980377, 0, 0.380187, 0.42)
+
+[node name="Music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_s1748")
+volume_db = -13.0
+autoplay = true
+parameters/looping = true

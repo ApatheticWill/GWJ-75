@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://dl46lbkpkobmu"]
+[gd_scene load_steps=14 format=3 uid="uid://dl46lbkpkobmu"]
 
 [ext_resource type="Texture2D" uid="uid://dpfp2wk2eusrs" path="res://Assets/Player/D&L.reference_dummy.png" id="1_5n1dc"]
 [ext_resource type="Script" path="res://player_2.gd" id="1_n283e"]
@@ -7,6 +7,7 @@
 [ext_resource type="AudioStream" uid="uid://cokmuh1wswcx4" path="res://Assets/Sound/SFX/Player/GWJ75_walk3.mp3" id="5_eknax"]
 [ext_resource type="AudioStream" uid="uid://b28o52fq8l3tp" path="res://Assets/Sound/SFX/Player/GWJ75_walk4.mp3" id="6_hovrf"]
 [ext_resource type="AudioStream" uid="uid://c641njc7g60jr" path="res://Assets/Sound/SFX/Player/Player_CBswing1.mp3" id="7_pj2u4"]
+[ext_resource type="AudioStream" uid="uid://dt70allp033r3" path="res://Assets/Sound/SFX/Player/GWJ75_Fallnew.mp3" id="8_1bc3c"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_e0fj2"]
 size = Vector2(10, 28)
@@ -22,6 +23,16 @@ stream_0/stream = ExtResource("3_kmy7d")
 stream_1/stream = ExtResource("4_ao87a")
 stream_2/stream = ExtResource("5_eknax")
 stream_3/stream = ExtResource("6_hovrf")
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_5hlab"]
+random_pitch = 1.7
+streams_count = 1
+stream_0/stream = ExtResource("7_pj2u4")
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_kw3tr"]
+random_pitch = 1.2
+streams_count = 1
+stream_0/stream = ExtResource("8_1bc3c")
 
 [node name="Player" type="CharacterBody2D" groups=["Player"]]
 collision_layer = 2
@@ -65,15 +76,15 @@ max_distance = 100.0
 bus = &"SFXEnv"
 
 [node name="Jump" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("7_pj2u4")
-volume_db = -6.0
-pitch_scale = 1.71
+stream = SubResource("AudioStreamRandomizer_5hlab")
+volume_db = -4.0
+pitch_scale = 1.33
 max_distance = 50.0
+bus = &"SFXEnv"
 
 [node name="Fall" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("4_ao87a")
-volume_db = 2.0
-pitch_scale = 0.46
+stream = SubResource("AudioStreamRandomizer_kw3tr")
+volume_db = -2.0
 max_distance = 150.0
 bus = &"SFXEnv"
 
