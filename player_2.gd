@@ -40,6 +40,7 @@ func _physics_process(delta: float) -> void:
 
 	handle_jump()
 	handle_movement(delta)
+	handle_respawn(delta)
 
 	# Updated gravity and jump-related logic
 	if !is_on_floor() and !coyote_timer.time_left:
@@ -106,6 +107,16 @@ func get_player_gravity() -> float:
 	if velocity.y < 0:
 		return gravity
 	return fall_gravity
+
+var last_known_safe_location : Vector2 = Vector2.ZERO
+var handle_respawn_timer = 0.0
+func handle_respawn(delta: float) -> void:
+	handle_respawn_timer += delta
+	if self.is_on_floor() && handle_respawn_timer > 1.0:
+		last_known_safe_location = self.position
+		handle_respawn_timer = 0.0
+func respawn_from_fall() -> void:
+	self.position = last_known_safe_location
 
 func _on_buffer_timer_timeout() -> void:
 	buffered_jump = false
