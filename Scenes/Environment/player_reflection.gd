@@ -1,19 +1,26 @@
 extends Area2D
+class_name PlayerReflection
 
-@export var player: Node2D
-@export var controller: Node2D
+@export var player: Player
+@export var spawn_position : Vector2
+@export var controller: Node
 
 
+func _ready() -> void:
+	
+	self.global_position = spawn_position
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(_delta):
-	position = Vector2(player.position.x, -player.position.y)
+func _physics_process(_delta):
+	
+	global_position = Vector2(player.global_position.x, -player.global_position.y)
 
 func _on_area_entered(area: Area2D):
-	if area.is_in_group("enemies"):
-		controller.life_lost()
-		area.queue_free()
 	
-	if area.is_in_group("points"):
-		controller.point_collected()
+	if area.is_in_group("Mirror_Hazard"):
+		
+		Eventbus.reflection_died.emit()
+	
+	if area.is_in_group("Heart"):
+		
 		area.queue_free()
+		Eventbus.heart_collected.emit()

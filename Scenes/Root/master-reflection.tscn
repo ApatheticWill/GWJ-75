@@ -7,7 +7,7 @@
 [ext_resource type="Script" path="res://Scenes/Root/cameraFollowPlayer.gd" id="5_7f03y"]
 [ext_resource type="PackedScene" uid="uid://cdp0evjujptj2" path="res://Scenes/Environment/enemy.tscn" id="6_75ue1"]
 [ext_resource type="PackedScene" uid="uid://cpt05slq8533s" path="res://Scenes/Environment/playerReflection.tscn" id="6_l50mv"]
-[ext_resource type="PackedScene" uid="uid://bp4sas21ixoqm" path="res://Scenes/Environment/points.tscn" id="7_q1n4d"]
+[ext_resource type="PackedScene" uid="uid://bp4sas21ixoqm" path="res://Scenes/Environment/heart.tscn" id="7_q1n4d"]
 [ext_resource type="PackedScene" uid="uid://bmdyawfvqn5o8" path="res://Scenes/Environment/door_reflection.tscn" id="9_5qaf0"]
 [ext_resource type="AudioStream" uid="uid://bx8vwd0lxcsdr" path="res://Assets/Sound/Music/GWJ75_darkerzonetest.mp3" id="10_sbpb0"]
 

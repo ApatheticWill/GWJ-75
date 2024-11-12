@@ -6,7 +6,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tnhai"]
 size = Vector2(14, 11)
 
-[node name="Area2D" type="Area2D" groups=["player"]]
+[node name="PlayerReflection" type="Area2D" groups=["player"]]
 collision_layer = 2
 collision_mask = 13
 script = ExtResource("1_ybpi8")

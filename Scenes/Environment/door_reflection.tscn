@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://bmdyawfvqn5o8"]
+[gd_scene load_steps=4 format=3 uid="uid://bmdyawfvqn5o8"]
 
 [ext_resource type="Script" path="res://Scenes/Environment/door_reflection.gd" id="1_g2n1k"]
 
@@ -7,10 +7,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_v566p"]
 size = Vector2(24.245, 48.025)
 
-[sub_resource type="LabelSettings" id="LabelSettings_vb7j8"]
-
 [node name="DoorReflection" type="Area2D"]
-position = Vector2(243, 44)
 collision_layer = 4
 collision_mask = 2
 script = ExtResource("1_g2n1k")
@@ -22,14 +19,4 @@ texture = SubResource("CanvasTexture_82ye6")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_v566p")
 
-[node name="Label" type="Label" parent="."]
-visible = false
-offset_left = -133.0
-offset_top = 36.0
-offset_right = 72.0
-offset_bottom = 59.0
-text = "collect more purple hearts"
-label_settings = SubResource("LabelSettings_vb7j8")
-
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]
-[connection signal="area_exited" from="." to="." method="_on_area_exited"]

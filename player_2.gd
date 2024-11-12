@@ -17,7 +17,7 @@ class_name Player
 @onready var buffer_timer: Timer = $Timers/BufferTimer
 @onready var camera: Camera2D = $Camera2D
 @export var activeCamera : bool = true
-@onready var levelcontroller : Node2D
+@onready var levelcontroller : Node2D # Wtf?
 
 ## Sound stuff
 @onready var Walk = $Walk
@@ -30,6 +30,9 @@ var time_since_last_step = 0.0
 var was_on_floor: bool = true
 
 func _ready():
+	
+	
+
 	if !activeCamera:
 		camera.queue_free()
 		levelcontroller = get_parent()

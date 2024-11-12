@@ -6,7 +6,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_di42f"]
 size = Vector2(20, 18)
 
-[node name="point" type="Area2D" groups=["points"]]
+[node name="Heart" type="Area2D" groups=["Heart"]]
 collision_layer = 4
 collision_mask = 2
 script = ExtResource("1_36xwl")
