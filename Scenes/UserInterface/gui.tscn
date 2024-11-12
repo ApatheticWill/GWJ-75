@@ -5,8 +5,8 @@
 
 [node name="GUI" type="CanvasLayer"]
 
-[node name="PauseMenu" parent="." instance=ExtResource("1_qmv1r")]
+[node name="DialogueBox" parent="." instance=ExtResource("2_nw7oh")]
 visible = false
 
-[node name="DialogueBox" parent="." instance=ExtResource("2_nw7oh")]
+[node name="PauseMenu" parent="." instance=ExtResource("1_qmv1r")]
 visible = false
