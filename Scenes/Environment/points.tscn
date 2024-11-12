@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://bp4sas21ixoqm"]
+
+[ext_resource type="Script" path="res://Scripts/Environment/enemy.gd" id="1_36xwl"]
+[ext_resource type="Texture2D" uid="uid://bujcfdlmxapj3" path="res://Assets/sprites/points.png" id="2_cnmy0"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_di42f"]
+size = Vector2(20, 18)
+
+[node name="point" type="Area2D" groups=["points"]]
+collision_layer = 4
+collision_mask = 2
+script = ExtResource("1_36xwl")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 1)
+shape = SubResource("RectangleShape2D_di42f")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_cnmy0")
