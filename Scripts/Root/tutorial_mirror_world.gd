@@ -3,6 +3,7 @@ class_name TutorialMirrorWorld
 
 @onready var player: Player = $Player
 @onready var door_reflection: Area2D = $DoorReflection
+@onready var heart: Area2D = $Heart
 @onready var player_spawn_location : Vector2 = Vector2(-198, -47)
 
 func _ready() -> void:
@@ -15,6 +16,7 @@ func _ready() -> void:
 func respawn_player() -> void:
 	
 	await get_tree().create_timer(0.2).timeout
+	heart.show()
 	player.global_position = player_spawn_location
 
 func on_reflection_died() -> void:

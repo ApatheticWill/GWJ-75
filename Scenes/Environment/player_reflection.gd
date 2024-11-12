@@ -22,5 +22,5 @@ func _on_area_entered(area: Area2D):
 	
 	if area.is_in_group("Heart"):
 		
-		area.queue_free()
+		area.hide()
 		Eventbus.heart_collected.emit()
