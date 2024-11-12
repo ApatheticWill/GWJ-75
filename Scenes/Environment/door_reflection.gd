@@ -6,6 +6,8 @@ extends Area2D
 
 func _on_area_entered(_area):
 	if controller.remaining_points == 0:
+		controller.level_completed
+		print("WIN")
 		#logic to next level
 		return
 	else :
@@ -16,4 +18,4 @@ func _on_area_entered(_area):
 
 func _on_area_exited(_area):
 	label.visible = false		
-	pass # Replace with function body.
+	pass 
