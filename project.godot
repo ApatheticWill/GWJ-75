@@ -13,11 +13,15 @@ config_version=5
 config/name="GWJ #75 : Unnamed"
 run/main_scene="res://Scenes/UserInterface/main_menu.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
-config/icon="res://icon.svg"
 
 [autoload]
 
 Eventbus="*res://Scripts/Autoload/eventbus.gd"
+GameManager="*res://Scripts/Autoload/game_manager.gd"
+
+[debug]
+
+gdscript/warnings/unused_signal=0
 
 [display]
 

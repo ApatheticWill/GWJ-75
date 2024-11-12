@@ -21,4 +21,5 @@ func reset_level():
 	get_tree().reload_current_scene()
 
 func level_completed():
+	emit_signal(get_tree().root.get_node("Eventbus").levelCompleated)
 	queue_free()

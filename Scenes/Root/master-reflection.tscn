@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=4 uid="uid://dci3gnbbna5lp"]
+[gd_scene load_steps=13 format=4 uid="uid://dci3gnbbna5lp"]
 
 [ext_resource type="Script" path="res://Scripts/Environment/master_reflection.gd" id="1_3i05k"]
 [ext_resource type="Texture2D" uid="uid://iplgob1wmjvl" path="res://Assets/Tileset/project_memory.platformer_tileset.png" id="1_44so8"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://cpt05slq8533s" path="res://Scenes/Environment/playerReflection.tscn" id="6_l50mv"]
 [ext_resource type="PackedScene" uid="uid://bp4sas21ixoqm" path="res://Scenes/Environment/points.tscn" id="7_q1n4d"]
 [ext_resource type="PackedScene" uid="uid://bmdyawfvqn5o8" path="res://Scenes/Environment/door_reflection.tscn" id="9_5qaf0"]
+[ext_resource type="AudioStream" uid="uid://bx8vwd0lxcsdr" path="res://Assets/Sound/Music/GWJ75_darkerzonetest.mp3" id="10_sbpb0"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mp2nb"]
 texture = ExtResource("1_44so8")
@@ -63,11 +64,11 @@ lives = 1
 remaining_points = 1
 
 [node name="PlaceholderLayer" type="TileMapLayer" parent="."]
-tile_map_data = PackedByteArray("AADy//v/AAABAAEAAADz//v/AAABAAEAAAD0//v/AAABAAEAAADx//z/AAABAAEAAADy//z/AAABAAEAAADz//z/AAABAAEAAAD0//z/AAABAAEAAAD1//z/AAABAAEAAAD4//7/AAABAAEAAAD5//7/AAABAAEAAAD6//7/AAABAAEAAAD7//7/AAABAAEAAAD9//v/AAABAAEAAAD+//v/AAABAAEAAAD///v/AAABAAEAAAAAAPv/AAABAAEAAAABAPv/AAABAAEAAAD4//j/AAABAAEAAAD5//j/AAABAAEAAAD6//j/AAABAAEAAAADAPz/AAABAAEAAAAEAPz/AAABAAEAAAAFAPz/AAABAAEAAAAGAPz/AAABAAEAAAAIAPr/AAABAAEAAAAJAPr/AAABAAEAAAANAP//AAABAAEAAAAOAP//AAABAAEAAAAPAP//AAABAAEAAAAQAP//AAABAAEAAAARAP//AAABAAEAAAAMAP//AAABAAEAAAALAP//AAABAAEAAAASAP//AAABAAEAAAAHAPz/AAABAAEAAAAIAPz/AAABAAEAAAAJAPz/AAABAAEAAAA=")
+tile_map_data = PackedByteArray("AADy//v/AAABAAEAAADz//v/AAABAAEAAAD0//v/AAABAAEAAADx//z/AAABAAEAAADy//z/AAABAAEAAADz//z/AAABAAEAAAD0//z/AAABAAEAAAD1//z/AAABAAEAAAD4//7/AAABAAEAAAD5//7/AAABAAEAAAD6//7/AAABAAEAAAD7//7/AAABAAEAAAD9//v/AAABAAEAAAD+//v/AAABAAEAAAD///v/AAABAAEAAAAAAPv/AAABAAEAAAABAPv/AAABAAEAAAADAPz/AAABAAEAAAAEAPz/AAABAAEAAAAFAPz/AAABAAEAAAAGAPz/AAABAAEAAAAIAPr/AAABAAEAAAAJAPr/AAABAAEAAAANAP//AAABAAEAAAAOAP//AAABAAEAAAAPAP//AAABAAEAAAAQAP//AAABAAEAAAARAP//AAABAAEAAAAMAP//AAABAAEAAAALAP//AAABAAEAAAASAP//AAABAAEAAAAHAPz/AAABAAEAAAAIAPz/AAABAAEAAAAJAPz/AAABAAEAAAALAP3/AAABAAEAAAAKAP3/AAABAAEAAAALAP7/AAABAAEAAAAMAP7/AAABAAEAAAD5//j/AAABAAEAAAD1//f/AAABAAEAAAD2//f/AAABAAEAAAD3//f/AAABAAEAAAD9//3/AAABAAEAAAD8//3/AAABAAEAAAD9//z/AAABAAEAAAD7//n/AAABAAEAAAA=")
 tile_set = SubResource("TileSet_fl10p")
 
 [node name="Player" parent="." instance=ExtResource("2_0to0j")]
-position = Vector2(-198, -93)
+position = Vector2(-199, -111)
 activeCamera = false
 
 [node name="GUI" parent="." instance=ExtResource("3_2pkxv")]
@@ -102,3 +103,10 @@ controller = NodePath("..")
 
 [node name="DoorReflection" parent="." node_paths=PackedStringArray("controller") instance=ExtResource("9_5qaf0")]
 controller = NodePath("..")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("10_sbpb0")
+volume_db = -13.0
+autoplay = true
+bus = &"Music"
+parameters/looping = true
