@@ -12,6 +12,7 @@ var remaining_points: int
 func _ready() -> void:
 	
 	Eventbus.reflection_died.connect(on_reflection_died)
+	player.can_move = true
 	remaining_points = points_to_collect
 	lives = Maxlives
 	player.global_position = player_spawn_location

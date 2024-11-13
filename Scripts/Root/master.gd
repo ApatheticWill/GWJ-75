@@ -12,6 +12,7 @@ func _ready() -> void:
 	
 	player.global_position = GameManager.overworld_respawn_point
 	player.camera.enabled = true
+	player.can_move = true
 	check_for_progress()
 
 func check_for_progress() -> void:

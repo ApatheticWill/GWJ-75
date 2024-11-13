@@ -4,6 +4,7 @@ extends Area2D
 @export var spawn_position : Vector2
 @export var challenge_index : int
 @onready var interactable : bool = false
+@onready var player : Player = get_tree().get_first_node_in_group("Player")
 
 ## Sound stuff
 @onready var MainMusic = $"../Music"
@@ -21,6 +22,8 @@ func on_heart_collected() -> void:
 func _on_area_entered(_area):
 	if !controller.check_pass_level():
 		return
+	
+	player.can_move = false
 	MainMusic.stop()
 	PortalOut.play()
 	PortalOut.finished.connect(_on_portal_out_finished)

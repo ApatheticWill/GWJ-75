@@ -4,6 +4,7 @@ class_name DialogueBox
 @onready var player : Player = get_tree().get_first_node_in_group("Player")
 @onready var read_rate : float = 0.03
 @onready var text_tween : Tween
+@onready var text_queue_done : bool = false
 @onready var text_display : RichTextLabel = $TextBox/Label
 @onready var current_state := TextState.READY
 @onready var text_queue := []
@@ -27,7 +28,8 @@ func _process(_delta: float) -> void:
 			if !text_queue.is_empty():
 				player.can_move = false
 				display_text()
-			else:
+			elif text_queue.is_empty() && text_queue_done:
+				text_queue_done = false
 				player.can_move = true
 		TextState.READING:
 			pass
@@ -39,7 +41,7 @@ func _process(_delta: float) -> void:
 	if text_tween != null:
 		
 		if text_tween.finished && text_display.visible_ratio == 1.0:
-			player.can_move = true
+			text_queue_done = true
 			await get_tree().create_timer(0.5).timeout
 			change_text_state(TextState.FINISHED)
 

@@ -114,7 +114,7 @@ script = ExtResource("1_l2pvh")
 
 [node name="TutorialDoor" parent="LockedDoors" instance=ExtResource("4_uapo7")]
 position = Vector2(680, 72)
-displayed_text = "[center]One must overcome their [shake][color=red]Wrath[/color][/shake] to enter the [wave]Dungeon Of Absolution.[/wave][/center]"
+displayed_text = "[center]One must [color=blue]reflect[/color] on their actions to enter the [wave]Dungeon Of Absolution.[/wave][/center]"
 
 [node name="FirstChallengeDoor" parent="LockedDoors" instance=ExtResource("4_uapo7")]
 position = Vector2(1752, -232)
@@ -179,22 +179,6 @@ offset_bottom = 42.0
 theme_override_font_sizes/font_size = 10
 text = "[E] To Interact!"
 
-[node name="MirrorChallenge1" type="Label" parent="PlaceholderText"]
-offset_left = 1632.0
-offset_top = -286.0
-offset_right = 1672.0
-offset_bottom = -263.0
-theme_override_font_sizes/font_size = 10
-text = "HERE!"
-
-[node name="MirrorChallenge2" type="Label" parent="PlaceholderText"]
-offset_left = 2074.0
-offset_top = 658.0
-offset_right = 2114.0
-offset_bottom = 681.0
-theme_override_font_sizes/font_size = 10
-text = "HERE!"
-
 [node name="MirrorChallenge3" type="Label" parent="PlaceholderText"]
 offset_left = 3063.2
 offset_top = 453.592
@@ -202,15 +186,6 @@ offset_right = 3103.2
 offset_bottom = 476.592
 theme_override_font_sizes/font_size = 10
 text = "HERE!"
-
-[node name="Recommendation1" type="Label" parent="PlaceholderText"]
-offset_left = 1772.0
-offset_top = -247.0
-offset_right = 1951.0
-offset_bottom = -224.0
-theme_override_font_sizes/font_size = 10
-text = "Shortcut after beating the challenge?
-<-------"
 
 [node name="Recommendation2" type="Label" parent="PlaceholderText"]
 offset_left = 2710.0
