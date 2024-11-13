@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b65k6aphfio68"
-path="res://.godot/imported/root.png-ea52ece9cbc4817d0c1e8280facb2cfc.ctex"
+uid="uid://kom8e2iydcsc"
+path="res://.godot/imported/fallen_bricks.png-bbfbded842788960bb40da57a131bcdf.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Tileset/stonebrick/root.png"
-dest_files=["res://.godot/imported/root.png-ea52ece9cbc4817d0c1e8280facb2cfc.ctex"]
+source_file="res://Assets/sprites/fallen_bricks.png"
+dest_files=["res://.godot/imported/fallen_bricks.png-bbfbded842788960bb40da57a131bcdf.ctex"]
 
 [params]
 

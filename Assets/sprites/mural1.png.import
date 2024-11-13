@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dmora64cs4xr2"
-path="res://.godot/imported/grass.png-ab2f796a2916477d05885c0f773e4a3e.ctex"
+uid="uid://cxke1imo0pynf"
+path="res://.godot/imported/mural1.png-ee6e59df639f34950a31f27a0e9aa103.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Tileset/stonebrick/grass.png"
-dest_files=["res://.godot/imported/grass.png-ab2f796a2916477d05885c0f773e4a3e.ctex"]
+source_file="res://Assets/sprites/mural1.png"
+dest_files=["res://.godot/imported/mural1.png-ee6e59df639f34950a31f27a0e9aa103.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://emcvwlqk2qgx"
-path="res://.godot/imported/base.png-f4f373c52826b8bc73aa9bbd7bccbb5f.ctex"
+uid="uid://capkoj6qots07"
+path="res://.godot/imported/grass_patch.png-bcaed46fc93e47bf47fcb4ad1a775492.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Tileset/stonebrick/base.png"
-dest_files=["res://.godot/imported/base.png-f4f373c52826b8bc73aa9bbd7bccbb5f.ctex"]
+source_file="res://Assets/sprites/grass_patch.png"
+dest_files=["res://.godot/imported/grass_patch.png-bcaed46fc93e47bf47fcb4ad1a775492.ctex"]
 
 [params]
 

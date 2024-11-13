@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b1818l64rp8gx"
-path="res://.godot/imported/crack.png-d6c868735fa15478a37147f294fc085d.ctex"
+uid="uid://cr6vepewyp4q5"
+path="res://.godot/imported/grass_atlas.png-86fd95c96f2beb35135da99988fd8302.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Tileset/stonebrick/crack.png"
-dest_files=["res://.godot/imported/crack.png-d6c868735fa15478a37147f294fc085d.ctex"]
+source_file="res://Assets/Tileset/stonebrick/grass_atlas.png"
+dest_files=["res://.godot/imported/grass_atlas.png-86fd95c96f2beb35135da99988fd8302.ctex"]
 
 [params]
 
