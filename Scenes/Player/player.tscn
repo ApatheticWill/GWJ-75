@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://dl46lbkpkobmu"]
+[gd_scene load_steps=17 format=3 uid="uid://dl46lbkpkobmu"]
 
 [ext_resource type="Texture2D" uid="uid://dpfp2wk2eusrs" path="res://Assets/Player/D&L.reference_dummy.png" id="1_5n1dc"]
 [ext_resource type="Script" path="res://player_2.gd" id="1_n283e"]
@@ -7,6 +7,11 @@
 [ext_resource type="AudioStream" uid="uid://cokmuh1wswcx4" path="res://Assets/Sound/SFX/Player/GWJ75_walk3.mp3" id="5_eknax"]
 [ext_resource type="AudioStream" uid="uid://b28o52fq8l3tp" path="res://Assets/Sound/SFX/Player/GWJ75_walk4.mp3" id="6_hovrf"]
 [ext_resource type="AudioStream" uid="uid://c641njc7g60jr" path="res://Assets/Sound/SFX/Player/Player_CBswing1.mp3" id="7_pj2u4"]
+[ext_resource type="Texture2D" uid="uid://c1suwja2nyqkb" path="res://Assets/Player/character/character_sprite0001.png" id="8_w1o5k"]
+[ext_resource type="Texture2D" uid="uid://ba4cshwa7d80r" path="res://Assets/Player/character/character_sprite0002.png" id="9_j1low"]
+[ext_resource type="Texture2D" uid="uid://b05yx8ohefq2b" path="res://Assets/Player/character/character_sprite0003.png" id="10_rm0gy"]
+[ext_resource type="Texture2D" uid="uid://hltmhfm0toln" path="res://Assets/Player/character/character_sprite0004.png" id="11_05kuo"]
+[ext_resource type="Texture2D" uid="uid://c7vb7akk6xaxp" path="res://Assets/Player/character/character_sprite0005.png" id="12_4jjic"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_e0fj2"]
 size = Vector2(10, 28)
@@ -19,6 +24,49 @@ stream_1/stream = ExtResource("4_ao87a")
 stream_2/stream = ExtResource("5_eknax")
 stream_3/stream = ExtResource("6_hovrf")
 
+[sub_resource type="SpriteFrames" id="SpriteFrames_n4muj"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_w1o5k")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_j1low")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_rm0gy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_05kuo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_4jjic")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 5.0
+}]
+
+[sub_resource type="GDScript" id="GDScript_bqoqy"]
+script/source = "extends AnimatedSprite2D
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	self.play(\"walk\")
+	
+"
+
 [node name="Player" type="CharacterBody2D" groups=["Player"]]
 collision_layer = 2
 script = ExtResource("1_n283e")
@@ -27,6 +75,7 @@ script = ExtResource("1_n283e")
 shape = SubResource("RectangleShape2D_e0fj2")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+visible = false
 texture = ExtResource("1_5n1dc")
 
 [node name="Camera2D" type="Camera2D" parent="."]
@@ -64,5 +113,12 @@ volume_db = 2.0
 pitch_scale = 0.46
 max_distance = 150.0
 bus = &"SFXEnv"
+
+[node name="testSprite" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.06, 0.06)
+sprite_frames = SubResource("SpriteFrames_n4muj")
+animation = &"walk"
+frame_progress = 0.227175
+script = SubResource("GDScript_bqoqy")
 
 [connection signal="timeout" from="Timers/BufferTimer" to="." method="_on_buffer_timer_timeout"]
