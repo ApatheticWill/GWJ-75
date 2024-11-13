@@ -98,11 +98,14 @@ seconds = 2.0
 
 [node name="paint" parent="." instance=ExtResource("5_46dkn")]
 position = Vector2(147, 141)
+rotation = 3.14159
 
 [node name="paint2" parent="." instance=ExtResource("5_46dkn")]
 position = Vector2(14, 93)
+rotation = 3.14159
 
 [node name="Area2D" parent="." node_paths=PackedStringArray("player", "controller") instance=ExtResource("4_5jyyc")]
+rotation = 3.14159
 player = NodePath("../Player")
 controller = NodePath("..")
 
