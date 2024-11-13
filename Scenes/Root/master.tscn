@@ -291,17 +291,17 @@ autoplay = true
 bus = &"Music"
 parameters/looping = true
 
+[node name="PortalIn" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("13_76pcj")
+volume_db = -4.0
+bus = &"SFXEnv"
+
 [node name="WaterDrops" type="AudioStreamPlayer2D" parent="."]
 position = Vector2(2661, 363)
 stream = ExtResource("6_4l7sn")
 autoplay = true
 max_distance = 200.0
 parameters/looping = true
-
-[node name="PortalIn" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("13_76pcj")
-volume_db = -8.0
-bus = &"SFXEnv"
 
 [connection signal="body_entered" from="InfoAreas/JumpInfoArea" to="." method="_on_jump_info_area_body_entered"]
 [connection signal="body_entered" from="InfoAreas/InteractInfoArea" to="." method="_on_interact_info_area_body_entered"]

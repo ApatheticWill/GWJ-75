@@ -9,7 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://bmdyawfvqn5o8" path="res://Scenes/Environment/door_reflection.tscn" id="7_a3f6b"]
 [ext_resource type="PackedScene" uid="uid://d0auovkxv4oql" path="res://Scenes/Environment/reflection_hazard.tscn" id="8_o4jfe"]
 [ext_resource type="AudioStream" uid="uid://bx8vwd0lxcsdr" path="res://Assets/Sound/Music/GWJ75_darkerzonetest.mp3" id="9_7k8ut"]
-[ext_resource type="AudioStream" uid="uid://cx7sbdjomqtfs" path="res://Assets/Sound/SFX/Enviroment/GWJ75_worldtransitionSFX.mp3" id="10_bcapk"]
+[ext_resource type="AudioStream" uid="uid://cidedxbvo4w3k" path="res://Assets/Sound/SFX/Enviroment/GWJ75_worldtransitionSFX2.mp3" id="10_g70dt"]
 [ext_resource type="PackedScene" uid="uid://cdp0evjujptj2" path="res://Scenes/Environment/enemy.tscn" id="11_267qd"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0icmu"]
@@ -112,9 +112,10 @@ volume_db = -13.0
 autoplay = true
 parameters/looping = true
 
-[node name="PortalOut" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("10_bcapk")
-volume_db = -2.0
+[node name="PortalOut" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("10_g70dt")
+volume_db = -4.0
+bus = &"SFXEnv"
 
 [node name="Enemy2" parent="." instance=ExtResource("11_267qd")]
 position = Vector2(-145, -86)
