@@ -12,25 +12,22 @@ func _ready() -> void:
 	
 	player.global_position = GameManager.overworld_respawn_point
 	player.camera.enabled = true
+	check_for_progress()
 
-func _physics_process(_delta: float) -> void:
+func check_for_progress() -> void:
 	
 	if GameManager.tutorial_beaten:
-		GameManager.tutorial_beaten = false
 		tutorial_mirror.call_deferred("queue_free")
 		tutorial_door.call_deferred("queue_free")
 	
 	if GameManager.first_challenge_beaten:
-		GameManager.first_challenge_beaten = false
 		# Will Have Mirror.
 		first_challenge_door.call_deferred("queue_free")
 	
 	if GameManager.second_challenge_beaten:
-		GameManager.second_challenge_beaten = false
 		# Will Have Mirror.
 		second_challenge_door.call_deferred("queue_free")
 	
 	if GameManager.third_challenge_beaten:
-		GameManager.third_challenge_beaten = false
 		# Will Have Mirror.
 		third_challenge_door.call_deferred("queue_free")

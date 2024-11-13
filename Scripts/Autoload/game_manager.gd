@@ -1,6 +1,6 @@
 extends Node
 
-var overworld_respawn_point : Vector2 = Vector2(-350, -75)
+var overworld_respawn_point : Vector2 = Vector2(-350, -77)
 var mirrorworld_respawn_point_tutorial : Vector2
 var mirrorworld_respawn_point_1 : Vector2
 var mirrorworld_respawn_point_2 : Vector2
@@ -32,3 +32,12 @@ func on_challenge_beaten(index : int) -> void:
 	elif index == 4:
 		
 		third_challenge_beaten = true
+
+func reset_progress() -> void:
+	
+	overworld_respawn_point = Vector2(-350, -77)
+	sealed_door_unlocked = false
+	tutorial_beaten = false
+	first_challenge_beaten = false
+	second_challenge_beaten = false
+	third_challenge_beaten = false
