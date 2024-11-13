@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=4 uid="uid://tljxvprshpm0"]
+[gd_scene load_steps=31 format=4 uid="uid://tljxvprshpm0"]
 
 [ext_resource type="Script" path="res://Scripts/Root/master.gd" id="1_l2pvh"]
 [ext_resource type="Texture2D" uid="uid://iplgob1wmjvl" path="res://Assets/Tileset/project_memory.platformer_tileset.png" id="1_utggq"]
@@ -16,6 +16,12 @@
 [ext_resource type="Resource" uid="uid://3kum0twsquca" path="res://Assets/Resource/challenge_2.tres" id="6_snt6k"]
 [ext_resource type="PackedScene" uid="uid://deal06fk0k00g" path="res://Scenes/Environment/text_tablet.tscn" id="11_p6hro"]
 [ext_resource type="AudioStream" uid="uid://cidedxbvo4w3k" path="res://Assets/Sound/SFX/Enviroment/GWJ75_worldtransitionSFX2.mp3" id="13_76pcj"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_imkx8"]
+size = Vector2(4, 112)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xxmal"]
+size = Vector2(2, 64)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_et2bt"]
 size = Vector2(5.50635, 64.0172)
@@ -133,17 +139,17 @@ displayed_text = "[center]One must reflect on themselves to proceed...[/center]"
 [node name="TutorialMirror" parent="Mirrors" instance=ExtResource("3_k2vys")]
 position = Vector2(571, 60)
 scene_resource = ExtResource("4_s5lb0")
-respawn_point = Vector2(570, 82)
+respawn_point = Vector2(570.834, 85)
 
 [node name="ChallengeMirror1" parent="Mirrors" instance=ExtResource("3_k2vys")]
 position = Vector2(1644, -244)
 scene_resource = ExtResource("5_m30yn")
-respawn_point = Vector2(1645, -223)
+respawn_point = Vector2(1645, -224)
 
 [node name="ChallengeMirror2" parent="Mirrors" instance=ExtResource("3_k2vys")]
 position = Vector2(2089, 685)
 scene_resource = ExtResource("6_snt6k")
-respawn_point = Vector2(1991, 719)
+respawn_point = Vector2(2089, 705)
 
 [node name="SealedDoors" type="Node" parent="."]
 
@@ -153,33 +159,26 @@ position = Vector2(1496, -72)
 [node name="SealedDoor2" parent="SealedDoors" instance=ExtResource("3_cml17")]
 position = Vector2(2208, 200)
 
-[node name="PlaceholderText" type="Node" parent="."]
+[node name="InfoAreas" type="Node" parent="."]
 
-[node name="MoveInfo" type="Label" parent="PlaceholderText"]
-offset_left = -357.0
-offset_top = -131.0
-offset_right = -275.0
-offset_bottom = -108.0
-theme_override_font_sizes/font_size = 10
-text = "[WASD] To Move!"
+[node name="JumpInfoArea" type="Area2D" parent="InfoAreas"]
+position = Vector2(89, 88)
+collision_layer = 0
+collision_mask = 2
 
-[node name="JumpInfo" type="Label" parent="PlaceholderText"]
-offset_left = 58.0
-offset_top = 60.0
-offset_right = 140.0
-offset_bottom = 83.0
-theme_override_font_sizes/font_size = 10
-text = "[SPACE] To Jump!"
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InfoAreas/JumpInfoArea"]
+shape = SubResource("RectangleShape2D_imkx8")
+debug_color = Color(5.77569e-07, 0.578762, 0.808368, 0.42)
 
-[node name="InteractInfo" type="Label" parent="PlaceholderText"]
-offset_left = 583.0
-offset_top = 19.0
-offset_right = 653.0
-offset_bottom = 42.0
-theme_override_font_sizes/font_size = 10
-text = "[E] To Interact!"
+[node name="InteractInfoArea" type="Area2D" parent="InfoAreas"]
+position = Vector2(440, 61)
+collision_layer = 0
+collision_mask = 2
 
-[node name="MirrorChallenge3" type="Label" parent="PlaceholderText"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InfoAreas/InteractInfoArea"]
+shape = SubResource("RectangleShape2D_xxmal")
+
+[node name="MirrorChallenge3" type="Label" parent="InfoAreas"]
 offset_left = 3063.2
 offset_top = 453.592
 offset_right = 3103.2
@@ -187,7 +186,7 @@ offset_bottom = 476.592
 theme_override_font_sizes/font_size = 10
 text = "HERE!"
 
-[node name="Recommendation2" type="Label" parent="PlaceholderText"]
+[node name="Recommendation2" type="Label" parent="InfoAreas"]
 offset_left = 2710.0
 offset_top = 37.0
 offset_right = 2901.0
@@ -281,7 +280,7 @@ tile_map_data = PackedByteArray("AAD8/wYAAAACAAAAAAD7/wYAAAABAAAAAAD6/wYAAAABAAA
 tile_set = SubResource("TileSet_fl10p")
 
 [node name="Player" parent="." instance=ExtResource("2_58ltc")]
-position = Vector2(-349, -80)
+position = Vector2(-385, -80)
 
 [node name="GUI" parent="." instance=ExtResource("3_mtnaf")]
 
@@ -303,3 +302,6 @@ parameters/looping = true
 stream = ExtResource("13_76pcj")
 volume_db = -8.0
 bus = &"SFXEnv"
+
+[connection signal="body_entered" from="InfoAreas/JumpInfoArea" to="." method="_on_jump_info_area_body_entered"]
+[connection signal="body_entered" from="InfoAreas/InteractInfoArea" to="." method="_on_interact_info_area_body_entered"]

@@ -9,6 +9,8 @@ class_name Master
 @onready var challenge_mirror_2: Mirror = $Mirrors/ChallengeMirror2
 @onready var third_challenge_door: LockedDoor = $LockedDoors/ThirdChallengeDoor
 @onready var player: Player = $Player
+@onready var jump_info_area: Area2D = $InfoAreas/JumpInfoArea
+@onready var interact_info_area: Area2D = $InfoAreas/InteractInfoArea
 
 func _ready() -> void:
 	
@@ -22,6 +24,8 @@ func check_for_progress() -> void:
 	if GameManager.tutorial_beaten:
 		tutorial_mirror.call_deferred("queue_free")
 		tutorial_door.call_deferred("queue_free")
+	else:
+		Eventbus.change_tutorial_text.emit("[center][WASD] To Move![/center]")
 	
 	if GameManager.first_challenge_beaten:
 		challenge_mirror_1.call_deferred("queue_free")
@@ -34,3 +38,22 @@ func check_for_progress() -> void:
 	if GameManager.third_challenge_beaten:
 		# Will Have Mirror.
 		third_challenge_door.call_deferred("queue_free")
+
+
+func _on_jump_info_area_body_entered(body: Node2D) -> void:
+	
+	if !body is Player:
+		return
+	
+	jump_info_area.call_deferred("queue_free")
+	Eventbus.change_tutorial_text.emit("[center][SPACE] To Jump![/center]")
+	
+
+func _on_interact_info_area_body_entered(body: Node2D) -> void:
+	
+	if !body is Player:
+		return
+	
+	interact_info_area.call_deferred("queue_free")
+	Eventbus.change_tutorial_text.emit("[center][E] To Interact![/center]")
+	
