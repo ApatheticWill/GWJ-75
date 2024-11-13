@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://bihnpld1ijdla" path="res://Scenes/Environment/hazard_area.tscn" id="2_04r6p"]
 [ext_resource type="PackedScene" uid="uid://dl46lbkpkobmu" path="res://Scenes/Player/player.tscn" id="2_58ltc"]
 [ext_resource type="PackedScene" uid="uid://cpy24sww483rp" path="res://Scenes/Environment/sealed_door.tscn" id="3_cml17"]
-[ext_resource type="PackedScene" uid="uid://srgp31ms0blu" path="res://Scenes/Environment/mirror.tscn" id="3_k2vys"]
+[ext_resource type="PackedScene" path="res://Scenes/Environment/mirror.tscn" id="3_k2vys"]
 [ext_resource type="PackedScene" uid="uid://c752ye2qiju3r" path="res://Scenes/UserInterface/gui.tscn" id="3_mtnaf"]
 [ext_resource type="PackedScene" uid="uid://fhyj430wdef8" path="res://Scenes/Environment/check_point_area.tscn" id="3_u8spa"]
 [ext_resource type="PackedScene" uid="uid://csqerh6fywqbl" path="res://Scenes/Environment/locked_door.tscn" id="4_uapo7"]
