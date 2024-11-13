@@ -18,7 +18,7 @@ func _ready() -> void:
 
 func respawn_player() -> void:
 	
-	await get_tree().create_timer(0.2).timeout
+	await get_tree().create_timer(0.1).timeout
 	for item in hearts:
 		item.show()
 		item.collision_layer = 3
@@ -38,14 +38,13 @@ func check_pass_level() -> bool:
 	return remaining_points == 0
 
 func life_lost():
-	lives -= 1
+	lives = max(0,lives-1)
 	if lives == 0:
 		respawn_player()
 
 func point_collected():
-	printt("point remaining: ", str(remaining_points) )
 	remaining_points = max(0,remaining_points-1)
-	printt("point remaining: ", str(remaining_points) )
+	
 	
 
 func reset_level():

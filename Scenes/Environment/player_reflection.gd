@@ -16,7 +16,7 @@ func _physics_process(_delta):
 
 func _on_area_entered(area: Area2D):
 	
-	if area.is_in_group("Mirror_Hazard"):
+	if area.is_in_group("enemies"):
 		controller.life_lost()
 		#Eventbus.reflection_died.emit()
 	
