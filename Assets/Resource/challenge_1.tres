@@ -1,0 +1,7 @@
+[gd_resource type="Resource" script_class="MirrorResource" load_steps=2 format=3 uid="uid://b1n3fn2mnxgrf"]
+
+[ext_resource type="Script" path="res://Scripts/Environment/mirror_resource.gd" id="1_sd3xv"]
+
+[resource]
+script = ExtResource("1_sd3xv")
+scene_to_transition = "res://Scenes/Root/Stage1_mirror_world.tscn"

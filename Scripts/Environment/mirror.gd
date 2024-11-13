@@ -1,9 +1,11 @@
 extends RigidBody2D
 class_name Mirror
 
-@export var scene_to_transition : String 
+@export var scene_resource : MirrorResource
+@export var respawn_point : Vector2
 
 @onready var interactable : bool = false
+@onready var interaction_zone: Area2D = $InteractionZone
 
 ## Sound stuff
 @onready var GameMusic = $"../../Music"  # Background music
@@ -14,7 +16,9 @@ func _ready() -> void:
 	PortalIn.finished.connect(_on_portal_sound_finished)
 
 func _unhandled_key_input(event: InputEvent) -> void:
+	
 	if event.is_action_pressed("interact") and interactable:
+		interactable = false
 		GameMusic.stop()  # Stop the main music
 		PortalIn.play()  # Play the portal sound effect
 
@@ -22,8 +26,11 @@ func _unhandled_key_input(event: InputEvent) -> void:
 
 func _on_portal_sound_finished() -> void:
 	# Set the respawn point and change the scene
-	GameManager.overworld_respawn_point = Vector2(570, 82)
-	get_tree().change_scene_to_file(scene_to_transition)
+	
+	for player in interaction_zone.get_overlapping_bodies():
+		
+		GameManager.overworld_respawn_point = respawn_point
+		player.get_tree().change_scene_to_file(scene_resource.scene_to_transition)
 
 func _on_interaction_zone_body_entered(body: Node2D) -> void:
 	if body is Player:

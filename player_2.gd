@@ -15,6 +15,7 @@ class_name Player
 @onready var sprite_2d: Sprite2D = $Sprite2D
 @onready var coyote_timer: Timer = $Timers/CoyoteTimer
 @onready var buffer_timer: Timer = $Timers/BufferTimer
+@onready var hurt_box: Area2D = $HurtBox
 @onready var camera: Camera2D = $Camera2D
 @export var activeCamera : bool = true
 @onready var levelcontroller : master_reflection # Wtf?

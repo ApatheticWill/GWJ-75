@@ -4,9 +4,9 @@
 [ext_resource type="Texture2D" uid="uid://iplgob1wmjvl" path="res://Assets/Tileset/project_memory.platformer_tileset.png" id="1_tg3v0"]
 [ext_resource type="PackedScene" uid="uid://dl46lbkpkobmu" path="res://Scenes/Player/player.tscn" id="2_j3en6"]
 [ext_resource type="PackedScene" uid="uid://cpt05slq8533s" path="res://Scenes/Environment/playerReflection.tscn" id="3_11xrf"]
-[ext_resource type="PackedScene" path="res://Scenes/Environment/heart.tscn" id="5_ox470"]
+[ext_resource type="PackedScene" uid="uid://bp4sas21ixoqm" path="res://Scenes/Environment/heart.tscn" id="5_ox470"]
 [ext_resource type="PackedScene" uid="uid://bmdyawfvqn5o8" path="res://Scenes/Environment/door_reflection.tscn" id="6_wxuth"]
-[ext_resource type="PackedScene" path="res://Scenes/Environment/reflection_hazard.tscn" id="7_dincc"]
+[ext_resource type="PackedScene" uid="uid://d0auovkxv4oql" path="res://Scenes/Environment/reflection_hazard.tscn" id="7_dincc"]
 [ext_resource type="AudioStream" uid="uid://bx8vwd0lxcsdr" path="res://Assets/Sound/Music/GWJ75_darkerzonetest.mp3" id="8_s1748"]
 [ext_resource type="AudioStream" uid="uid://cx7sbdjomqtfs" path="res://Assets/Sound/SFX/Enviroment/GWJ75_worldtransitionSFX.mp3" id="9_ufntj"]
 
