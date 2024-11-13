@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://dc30rdt8jtwgf"]
+[gd_scene load_steps=4 format=3 uid="uid://dc30rdt8jtwgf"]
 
 [ext_resource type="Script" path="res://Scripts/UserInterface/main_menu.gd" id="1_y2ble"]
+[ext_resource type="PackedScene" uid="uid://b3ucytmm3fw3i" path="res://Scenes/UserInterface/settings_menu.tscn" id="2_ct3ea"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_lcpyw"]
 
@@ -12,6 +13,10 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_y2ble")
+
+[node name="SettingsMenu" parent="." instance=ExtResource("2_ct3ea")]
+visible = false
+layout_mode = 1
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 1

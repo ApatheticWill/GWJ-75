@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://dys1h3fpmulto"]
+[gd_scene load_steps=5 format=3 uid="uid://dys1h3fpmulto"]
 
 [ext_resource type="Script" path="res://Scripts/UserInterface/pause_menu.gd" id="1_qmvci"]
+[ext_resource type="PackedScene" uid="uid://b3ucytmm3fw3i" path="res://Scenes/UserInterface/settings_menu.tscn" id="2_tnagp"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_iwmys"]
 
@@ -25,6 +26,10 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = SubResource("CanvasTexture_iwmys")
+
+[node name="SettingsMenu" parent="." instance=ExtResource("2_tnagp")]
+visible = false
+layout_mode = 1
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 1

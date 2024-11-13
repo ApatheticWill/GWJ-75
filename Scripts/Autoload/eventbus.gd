@@ -7,6 +7,7 @@ signal heart_collected
 signal reflection_died
 signal player_died
 signal change_tutorial_text(tutorial_text : String)
+signal hide_ui
 
 @warning_ignore("unused_signal")
 signal levelCompleated(level: int)
