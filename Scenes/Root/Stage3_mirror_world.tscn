@@ -57,7 +57,7 @@ size = Vector2(634, 4)
 [node name="TutorialMirrorWorld" type="Node" node_paths=PackedStringArray("hearts")]
 script = ExtResource("1_shcrg")
 Maxlives = 1
-points_to_collect = 3
+points_to_collect = 4
 hearts = [NodePath("Heart3"), NodePath("Heart"), NodePath("Heart2")]
 
 [node name="PlaceHolderLayer" type="TileMapLayer" parent="."]
