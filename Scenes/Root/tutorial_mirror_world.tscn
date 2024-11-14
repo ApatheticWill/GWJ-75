@@ -1,8 +1,9 @@
-[gd_scene load_steps=13 format=4 uid="uid://cj1pocqysfsli"]
+[gd_scene load_steps=15 format=4 uid="uid://cj1pocqysfsli"]
 
 [ext_resource type="Script" path="res://Scripts/Environment/master_reflection.gd" id="1_2s7pl"]
 [ext_resource type="Texture2D" uid="uid://iplgob1wmjvl" path="res://Assets/Tileset/project_memory.platformer_tileset.png" id="1_tg3v0"]
 [ext_resource type="PackedScene" uid="uid://dl46lbkpkobmu" path="res://Scenes/Player/player.tscn" id="2_j3en6"]
+[ext_resource type="Texture2D" uid="uid://kc75ocvqg1pp" path="res://ParticleStuff/tileset_beta1.png" id="3_1nm2h"]
 [ext_resource type="PackedScene" uid="uid://cpt05slq8533s" path="res://Scenes/Environment/playerReflection.tscn" id="3_11xrf"]
 [ext_resource type="PackedScene" uid="uid://bp4sas21ixoqm" path="res://Scenes/Environment/heart.tscn" id="5_ox470"]
 [ext_resource type="PackedScene" uid="uid://bmdyawfvqn5o8" path="res://Scenes/Environment/door_reflection.tscn" id="6_wxuth"]
@@ -44,10 +45,35 @@ texture = ExtResource("1_tg3v0")
 6:6/0 = 0
 7:6/0 = 0
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lsyyf"]
+texture = ExtResource("3_1nm2h")
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+2:1/0 = 0
+2:2/0 = 0
+1:2/0 = 0
+0:2/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+5:0/0 = 0
+5:1/0 = 0
+5:2/0 = 0
+6:2/0 = 0
+7:2/0 = 0
+7:1/0 = 0
+7:0/0 = 0
+6:0/0 = 0
+6:4/0 = 0
+5:6/0 = 0
+6:6/0 = 0
+7:6/0 = 0
+
 [sub_resource type="TileSet" id="TileSet_88rl2"]
 physics_layer_0/collision_layer = 1
 physics_layer_0/collision_mask = 0
 sources/0 = SubResource("TileSetAtlasSource_0icmu")
+sources/1 = SubResource("TileSetAtlasSource_lsyyf")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_j20xr"]
 size = Vector2(634, 4)
@@ -59,7 +85,7 @@ points_to_collect = 1
 hearts = [NodePath("Heart")]
 
 [node name="PlaceHolderLayer" type="TileMapLayer" parent="."]
-tile_map_data = PackedByteArray("AADx//7/AAABAAEAAADy//7/AAABAAEAAADz//7/AAABAAEAAAD0//7/AAABAAEAAAD1//7/AAABAAEAAAD4//3/AAABAAEAAAD5//3/AAABAAEAAAD6//3/AAABAAEAAAD9//z/AAABAAEAAAD+//z/AAABAAEAAAD///z/AAABAAEAAAAAAPz/AAABAAEAAAABAPz/AAABAAEAAAAEAP3/AAABAAEAAAAFAP3/AAABAAEAAAAGAP3/AAABAAEAAAAJAP7/AAABAAEAAAAKAP7/AAABAAEAAAALAP7/AAABAAEAAAAMAP7/AAABAAEAAAANAP7/AAABAAEAAADx/wEAAAABAAEAAADy/wEAAAABAAEAAADz/wEAAAABAAEAAAD0/wEAAAABAAEAAAD1/wEAAAABAAEAAAD4/wIAAAABAAEAAAD5/wIAAAABAAEAAAD6/wIAAAABAAEAAAD9/wMAAAABAAEAAAD+/wMAAAABAAEAAAD//wMAAAABAAEAAAAAAAMAAAABAAEAAAABAAMAAAABAAEAAAAEAAIAAAABAAEAAAAFAAIAAAABAAEAAAAGAAIAAAABAAEAAAAJAAEAAAABAAEAAAAKAAEAAAABAAEAAAALAAEAAAABAAEAAAAMAAEAAAABAAEAAAANAAEAAAABAAEAAAA=")
+tile_map_data = PackedByteArray("AADx//7/AQAGAAYAAADy//7/AQAGAAYAAADz//7/AQAGAAYAAAD0//7/AQAGAAYAAAD1//7/AQAGAAYAAAD4//3/AAABAAEAAAD5//3/AAABAAEAAAD6//3/AAABAAEAAAD9//z/AAABAAEAAAD+//z/AAABAAEAAAD///z/AAABAAEAAAAAAPz/AAABAAEAAAABAPz/AAABAAEAAAAEAP3/AAABAAEAAAAFAP3/AAABAAEAAAAGAP3/AAABAAEAAAAJAP7/AAABAAEAAAAKAP7/AAABAAEAAAALAP7/AAABAAEAAAAMAP7/AAABAAEAAAANAP7/AAABAAEAAADx/wEAAAABAAEAAADy/wEAAAABAAEAAADz/wEAAAABAAEAAAD0/wEAAAABAAEAAAD1/wEAAAABAAEAAAD4/wIAAAABAAEAAAD5/wIAAAABAAEAAAD6/wIAAAABAAEAAAD9/wMAAAABAAEAAAD+/wMAAAABAAEAAAD//wMAAAABAAEAAAAAAAMAAAABAAEAAAABAAMAAAABAAEAAAAEAAIAAAABAAEAAAAFAAIAAAABAAEAAAAGAAIAAAABAAEAAAAJAAEAAAABAAEAAAAKAAEAAAABAAEAAAALAAEAAAABAAEAAAAMAAEAAAABAAEAAAANAAEAAAABAAEAAAA=")
 tile_set = SubResource("TileSet_88rl2")
 
 [node name="Player" parent="." instance=ExtResource("2_j3en6")]

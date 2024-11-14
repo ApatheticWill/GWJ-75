@@ -1,0 +1,16 @@
+[gd_scene load_steps=2 format=3 uid="uid://cbks3kqon3g34"]
+
+[ext_resource type="Texture2D" uid="uid://bj0dj6ip207ym" path="res://ParticleStuff/sindemon/horror_2.png" id="1_rxatg"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+amount = 3
+lifetime = 0.17
+explosiveness = 0.17
+randomness = 0.13
+texture = ExtResource("1_rxatg")
+emission_shape = 3
+emission_rect_extents = Vector2(1, 1)
+direction = Vector2(10, 5)
+spread = 75.91

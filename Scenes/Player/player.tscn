@@ -1,7 +1,7 @@
-[gd_scene load_steps=15 format=3 uid="uid://dl46lbkpkobmu"]
+[gd_scene load_steps=16 format=3 uid="uid://dl46lbkpkobmu"]
 
-[ext_resource type="Texture2D" uid="uid://dpfp2wk2eusrs" path="res://Assets/Player/D&L.reference_dummy.png" id="1_5n1dc"]
 [ext_resource type="Script" path="res://player_2.gd" id="1_n283e"]
+[ext_resource type="Texture2D" uid="uid://bxlf0mmvj6oa" path="res://ParticleStuff/Fire/chartest.png" id="2_dnlgd"]
 [ext_resource type="AudioStream" uid="uid://biyriars5u1eo" path="res://Assets/Sound/SFX/Player/GWJ75_walk1.mp3" id="3_kmy7d"]
 [ext_resource type="AudioStream" uid="uid://bjokmmolqdi8o" path="res://Assets/Sound/SFX/Player/GWJ75_walk2.mp3" id="4_ao87a"]
 [ext_resource type="AudioStream" uid="uid://cokmuh1wswcx4" path="res://Assets/Sound/SFX/Player/GWJ75_walk3.mp3" id="5_eknax"]
@@ -9,6 +9,7 @@
 [ext_resource type="AudioStream" uid="uid://c641njc7g60jr" path="res://Assets/Sound/SFX/Player/Player_CBswing1.mp3" id="7_pj2u4"]
 [ext_resource type="AudioStream" uid="uid://dt70allp033r3" path="res://Assets/Sound/SFX/Player/GWJ75_Fallnew.mp3" id="8_1bc3c"]
 [ext_resource type="PackedScene" uid="uid://c752ye2qiju3r" path="res://Scenes/UserInterface/gui.tscn" id="9_eq88v"]
+[ext_resource type="PackedScene" uid="uid://b74fmuaee4j0p" path="res://ParticleStuff/Fire/firetest.tscn" id="10_s8id0"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_e0fj2"]
 size = Vector2(10, 28)
@@ -51,7 +52,9 @@ shape = SubResource("CapsuleShape2D_qw2mx")
 debug_color = Color(0.995946, 0, 0.196073, 0.42)
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_5n1dc")
+position = Vector2(1.25, 0.75)
+scale = Vector2(0.460938, 0.492187)
+texture = ExtResource("2_dnlgd")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(5, 5)
@@ -90,6 +93,12 @@ max_distance = 150.0
 bus = &"SFXEnv"
 
 [node name="GUI" parent="." instance=ExtResource("9_eq88v")]
+
+[node name="GPUParticles2D" parent="." instance=ExtResource("10_s8id0")]
+position = Vector2(8, -12)
+scale = Vector2(0.3, 0.3)
+scale_amount_min = 0.71
+scale_amount_max = 0.71
 
 [connection signal="area_entered" from="HurtBox" to="." method="_on_hurt_box_area_entered"]
 [connection signal="timeout" from="Timers/BufferTimer" to="." method="_on_buffer_timer_timeout"]

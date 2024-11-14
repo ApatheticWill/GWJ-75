@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=4 uid="uid://dci3gnbbna5lp"]
+[gd_scene load_steps=15 format=4 uid="uid://dci3gnbbna5lp"]
 
 [ext_resource type="Script" path="res://Scripts/Environment/master_reflection.gd" id="1_gv0ex"]
 [ext_resource type="Texture2D" uid="uid://iplgob1wmjvl" path="res://Assets/Tileset/project_memory.platformer_tileset.png" id="2_27uye"]
@@ -9,6 +9,8 @@
 [ext_resource type="PackedScene" uid="uid://bmdyawfvqn5o8" path="res://Scenes/Environment/door_reflection.tscn" id="6_q1rg3"]
 [ext_resource type="PackedScene" uid="uid://cdp0evjujptj2" path="res://Scenes/Environment/enemy.tscn" id="6_rf5yw"]
 [ext_resource type="AudioStream" uid="uid://bx8vwd0lxcsdr" path="res://Assets/Sound/Music/GWJ75_darkerzonetest.mp3" id="8_2nhou"]
+[ext_resource type="PackedScene" uid="uid://cbks3kqon3g34" path="res://ParticleStuff/sindemon/sinsemontest.tscn" id="11_0sctx"]
+[ext_resource type="PackedScene" uid="uid://bmjs22e00pahi" path="res://ParticleStuff/smoke/smoketest.tscn" id="11_ocrqb"]
 [ext_resource type="AudioStream" uid="uid://cidedxbvo4w3k" path="res://Assets/Sound/SFX/Enviroment/GWJ75_worldtransitionSFX2.mp3" id="11_ycbun"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mp2nb"]
@@ -124,3 +126,8 @@ parameters/looping = true
 stream = ExtResource("11_ycbun")
 volume_db = -4.0
 bus = &"SFXEnv"
+
+[node name="Node2D" parent="." instance=ExtResource("11_0sctx")]
+position = Vector2(-496, 73)
+
+[node name="Node" parent="." instance=ExtResource("11_ocrqb")]

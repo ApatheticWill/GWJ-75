@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=4 uid="uid://tljxvprshpm0"]
+[gd_scene load_steps=36 format=4 uid="uid://tljxvprshpm0"]
 
 [ext_resource type="Script" path="res://Scripts/Root/master.gd" id="1_l2pvh"]
 [ext_resource type="Texture2D" uid="uid://iplgob1wmjvl" path="res://Assets/Tileset/project_memory.platformer_tileset.png" id="1_utggq"]
@@ -17,6 +17,7 @@
 [ext_resource type="PackedScene" uid="uid://deal06fk0k00g" path="res://Scenes/Environment/text_tablet.tscn" id="11_p6hro"]
 [ext_resource type="Texture2D" uid="uid://cye3tjemgerua" path="res://Assets/Tileset/grass_atlas.png" id="12_e0fn3"]
 [ext_resource type="AudioStream" uid="uid://cidedxbvo4w3k" path="res://Assets/Sound/SFX/Enviroment/GWJ75_worldtransitionSFX2.mp3" id="13_76pcj"]
+[ext_resource type="Texture2D" uid="uid://kc75ocvqg1pp" path="res://ParticleStuff/tileset_beta1.png" id="14_vhkcv"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_imkx8"]
 size = Vector2(4, 112)
@@ -181,8 +182,33 @@ texture = ExtResource("12_e0fn3")
 6:7/0 = 0
 7:7/0 = 0
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_reabw"]
+texture = ExtResource("14_vhkcv")
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+2:1/0 = 0
+2:2/0 = 0
+1:2/0 = 0
+0:2/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+5:0/0 = 0
+5:1/0 = 0
+5:2/0 = 0
+6:2/0 = 0
+7:2/0 = 0
+7:1/0 = 0
+7:0/0 = 0
+6:0/0 = 0
+6:4/0 = 0
+5:6/0 = 0
+6:6/0 = 0
+7:6/0 = 0
+
 [sub_resource type="TileSet" id="TileSet_pbcfv"]
 sources/0 = SubResource("TileSetAtlasSource_3f36s")
+sources/1 = SubResource("TileSetAtlasSource_reabw")
 
 [node name="Master" type="Node"]
 script = ExtResource("1_l2pvh")
@@ -345,6 +371,7 @@ tile_map_data = PackedByteArray("AAD8/wYAAAACAAAAAAD7/wYAAAABAAAAAAD6/wYAAAABAAA
 tile_set = SubResource("TileSet_fl10p")
 
 [node name="BaseLayer" type="TileMapLayer" parent="."]
+tile_map_data = PackedByteArray("AADm//z/AQABAAAAAADn//z/AQABAAAAAADo//z/AQABAAAAAADp//z/AQABAAAAAADq//z/AQABAAAAAADr//z/AQABAAAAAADs//z/AQABAAAAAADt//z/AQABAAAAAADk//3/AQAAAAEAAADk//7/AQAAAAEAAADj//7/AQAAAAEAAADl//z/AQAAAAAAAADk//z/AQAAAAAAAADu//z/AQACAAAAAADv//3/AQACAAAAAADu//3/AQACAAEAAAA=")
 tile_set = SubResource("TileSet_pbcfv")
 
 [node name="Player" parent="." instance=ExtResource("2_58ltc")]
