@@ -20,73 +20,71 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -46.5
-offset_top = -80.0
-offset_right = 46.5
-offset_bottom = -57.0
+offset_left = -86.5
+offset_top = -241.0
+offset_right = 86.5
+offset_bottom = -199.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_font_sizes/font_size = 30
 text = "- SETTINGS -"
 
 [node name="SettingsBar" type="Panel" parent="."]
-self_modulate = Color(1, 1, 1, 0.619608)
+self_modulate = Color(0, 0, 0, 0.945098)
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -97.0
-offset_top = -45.5
-offset_right = 97.0
-offset_bottom = 79.5
+offset_left = -247.5
+offset_top = -160.0
+offset_right = 247.5
+offset_bottom = 160.0
 grow_horizontal = 2
 grow_vertical = 2
 
 [node name="Sliders" type="VBoxContainer" parent="SettingsBar"]
 layout_mode = 2
-offset_left = 76.0
-offset_top = 12.5
-offset_right = 176.0
-offset_bottom = 76.5
+offset_left = 203.5
+offset_top = 49.0
+offset_right = 448.5
+offset_bottom = 207.0
 grow_horizontal = 0
 grow_vertical = 2
 size_flags_vertical = 4
 
 [node name="HSlider" type="HSlider" parent="SettingsBar/Sliders"]
 layout_mode = 2
+size_flags_vertical = 3
 step = 10.0
 rounded = true
 scrollable = false
-
-[node name="Control" type="Control" parent="SettingsBar/Sliders"]
-layout_mode = 2
 
 [node name="HSlider2" type="HSlider" parent="SettingsBar/Sliders"]
 layout_mode = 2
+size_flags_vertical = 3
 step = 10.0
 rounded = true
 scrollable = false
 
-[node name="Control2" type="Control" parent="SettingsBar/Sliders"]
-layout_mode = 2
-
 [node name="HSlider3" type="HSlider" parent="SettingsBar/Sliders"]
 layout_mode = 2
+size_flags_vertical = 3
 step = 10.0
 rounded = true
 scrollable = false
 
 [node name="Texts" type="VBoxContainer" parent="SettingsBar"]
 layout_mode = 1
-offset_left = 15.0
-offset_top = 9.5
-offset_right = 60.0
-offset_bottom = 79.5
+offset_left = 50.5
+offset_top = 64.0
+offset_right = 135.5
+offset_bottom = 193.0
 
 [node name="MasterText" type="Label" parent="SettingsBar/Texts"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 13
+theme_override_font_sizes/font_size = 25
 text = "Master"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -94,9 +92,12 @@ vertical_alignment = 1
 [node name="Control" type="Control" parent="SettingsBar/Texts"]
 layout_mode = 2
 
+[node name="Control3" type="Control" parent="SettingsBar/Texts"]
+layout_mode = 2
+
 [node name="MusicText" type="Label" parent="SettingsBar/Texts"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 13
+theme_override_font_sizes/font_size = 25
 text = "Music"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -104,9 +105,12 @@ vertical_alignment = 1
 [node name="Control2" type="Control" parent="SettingsBar/Texts"]
 layout_mode = 2
 
+[node name="Control4" type="Control" parent="SettingsBar/Texts"]
+layout_mode = 2
+
 [node name="SFXTest" type="Label" parent="SettingsBar/Texts"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 13
+theme_override_font_sizes/font_size = 25
 text = "SFX"
 horizontal_alignment = 1
 
@@ -118,14 +122,14 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -43.0
-offset_top = 45.0
+offset_top = 100.0
 offset_right = 43.0
-offset_bottom = 76.0
+offset_bottom = 136.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_hover_pressed_color = Color(0.427451, 0.807843, 0.819608, 1)
 theme_override_colors/font_hover_color = Color(0.427451, 0.807843, 0.819608, 1)
-theme_override_font_sizes/font_size = 10
+theme_override_font_sizes/font_size = 20
 theme_override_styles/focus = SubResource("StyleBoxEmpty_3413q")
 text = "Return"
 flat = true

@@ -10,6 +10,7 @@ var tutorial_beaten : bool = false
 var first_challenge_beaten : bool = false
 var second_challenge_beaten : bool = false
 var third_challenge_beaten : bool = false
+var challenges_beaten : bool = false
 
 func _ready() -> void:
 	
@@ -32,6 +33,10 @@ func on_challenge_beaten(index : int) -> void:
 	elif index == 4:
 		
 		third_challenge_beaten = true
+	
+	elif tutorial_beaten && first_challenge_beaten && second_challenge_beaten && third_challenge_beaten:
+		
+		challenges_beaten = true
 
 func reset_progress() -> void:
 	
@@ -41,3 +46,4 @@ func reset_progress() -> void:
 	first_challenge_beaten = false
 	second_challenge_beaten = false
 	third_challenge_beaten = false
+	challenges_beaten = false

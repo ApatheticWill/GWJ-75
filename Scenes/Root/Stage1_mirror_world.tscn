@@ -1,11 +1,10 @@
-[gd_scene load_steps=14 format=4 uid="uid://dci3gnbbna5lp"]
+[gd_scene load_steps=13 format=4 uid="uid://dci3gnbbna5lp"]
 
 [ext_resource type="Script" path="res://Scripts/Environment/master_reflection.gd" id="1_gv0ex"]
 [ext_resource type="Texture2D" uid="uid://iplgob1wmjvl" path="res://Assets/Tileset/project_memory.platformer_tileset.png" id="2_27uye"]
 [ext_resource type="PackedScene" uid="uid://dl46lbkpkobmu" path="res://Scenes/Player/player.tscn" id="3_sola7"]
 [ext_resource type="Script" path="res://Scenes/Root/cameraFollowPlayer.gd" id="4_1xjyp"]
 [ext_resource type="PackedScene" uid="uid://cpt05slq8533s" path="res://Scenes/Environment/playerReflection.tscn" id="4_5jyyc"]
-[ext_resource type="PackedScene" uid="uid://c752ye2qiju3r" path="res://Scenes/UserInterface/gui.tscn" id="4_nd606"]
 [ext_resource type="PackedScene" uid="uid://bp4sas21ixoqm" path="res://Scenes/Environment/heart.tscn" id="5_46dkn"]
 [ext_resource type="PackedScene" uid="uid://bmdyawfvqn5o8" path="res://Scenes/Environment/door_reflection.tscn" id="6_q1rg3"]
 [ext_resource type="PackedScene" uid="uid://cdp0evjujptj2" path="res://Scenes/Environment/enemy.tscn" id="6_rf5yw"]
@@ -67,16 +66,15 @@ hearts = [NodePath("paint"), NodePath("paint2")]
 player_spawn_location = Vector2(-200, -96)
 
 [node name="PlaceholderLayer" type="TileMapLayer" parent="."]
-tile_map_data = PackedByteArray("AADy//v/AAABAAEAAADz//v/AAABAAEAAAD0//v/AAABAAEAAADx//z/AAABAAEAAADy//z/AAABAAEAAADz//z/AAABAAEAAAD0//z/AAABAAEAAAD1//z/AAABAAEAAAD4//7/AAABAAEAAAD5//7/AAABAAEAAAD6//7/AAABAAEAAAD7//7/AAABAAEAAAD9//v/AAABAAEAAAD+//v/AAABAAEAAAD///v/AAABAAEAAAAAAPv/AAABAAEAAAABAPv/AAABAAEAAAADAPz/AAABAAEAAAAEAPz/AAABAAEAAAAFAPz/AAABAAEAAAAGAPz/AAABAAEAAAAIAPr/AAABAAEAAAAJAPr/AAABAAEAAAANAP//AAABAAEAAAAOAP//AAABAAEAAAAPAP//AAABAAEAAAAQAP//AAABAAEAAAARAP//AAABAAEAAAAMAP//AAABAAEAAAALAP//AAABAAEAAAASAP//AAABAAEAAAAHAPz/AAABAAEAAAAIAPz/AAABAAEAAAAJAPz/AAABAAEAAAALAP3/AAABAAEAAAAKAP3/AAABAAEAAAALAP7/AAABAAEAAAAMAP7/AAABAAEAAAD9//3/AAABAAEAAAD8//3/AAABAAEAAAD9//z/AAABAAEAAAD+//r/AAABAAEAAAD///n/AAABAAEAAAD///r/AAABAAEAAAA=")
+tile_map_data = PackedByteArray("AADy//v/AAABAAEAAADz//v/AAABAAEAAAD0//v/AAABAAEAAADx//z/AAABAAEAAADy//z/AAABAAEAAADz//z/AAABAAEAAAD0//z/AAABAAEAAAD1//z/AAABAAEAAAD4//7/AAABAAEAAAD5//7/AAABAAEAAAD6//7/AAABAAEAAAD7//7/AAABAAEAAAD9//v/AAABAAEAAAD+//v/AAABAAEAAAD///v/AAABAAEAAAAAAPv/AAABAAEAAAABAPv/AAABAAEAAAADAPz/AAABAAEAAAAEAPz/AAABAAEAAAAFAPz/AAABAAEAAAAGAPz/AAABAAEAAAAIAPr/AAABAAEAAAAJAPr/AAABAAEAAAANAP//AAABAAEAAAAOAP//AAABAAEAAAAPAP//AAABAAEAAAAQAP//AAABAAEAAAARAP//AAABAAEAAAAMAP//AAABAAEAAAALAP//AAABAAEAAAASAP//AAABAAEAAAAHAPz/AAABAAEAAAAIAPz/AAABAAEAAAAJAPz/AAABAAEAAAALAP3/AAABAAEAAAAKAP3/AAABAAEAAAALAP7/AAABAAEAAAAMAP7/AAABAAEAAAD9//3/AAABAAEAAAD8//3/AAABAAEAAAD9//z/AAABAAEAAAD+//r/AAABAAEAAAD///n/AAABAAEAAAD///r/AAABAAEAAADx/wMAAAABAAEAAADy/wMAAAABAAEAAADz/wMAAAABAAEAAAD0/wMAAAABAAEAAAD1/wMAAAABAAEAAADy/wQAAAABAAEAAADz/wQAAAABAAEAAAD0/wQAAAABAAEAAAD4/wEAAAABAAEAAAD5/wEAAAABAAEAAAD6/wEAAAABAAEAAAD7/wEAAAABAAEAAAD8/wIAAAABAAEAAAD9/wIAAAABAAEAAAD9/wMAAAABAAEAAAD9/wQAAAABAAEAAAD//wQAAAABAAEAAAAAAAQAAAABAAEAAAABAAQAAAABAAEAAAADAAMAAAABAAEAAAAEAAMAAAABAAEAAAAHAAMAAAABAAEAAAAIAAMAAAABAAEAAAAJAAMAAAABAAEAAAAIAAUAAAABAAEAAAAJAAUAAAABAAEAAAALAAAAAAABAAEAAAAMAAAAAAABAAEAAAANAAAAAAABAAEAAAAOAAAAAAABAAEAAAAPAAAAAAABAAEAAAAQAAAAAAABAAEAAAARAAAAAAABAAEAAAASAAAAAAABAAEAAAA=")
 tile_set = SubResource("TileSet_fl10p")
 
 [node name="Player" parent="." instance=ExtResource("3_sola7")]
 position = Vector2(-200, -96)
 activeCamera = false
 
-[node name="GUI" parent="." instance=ExtResource("4_nd606")]
-
 [node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(3, 3)
 script = ExtResource("4_1xjyp")
 
 [node name="Enemy2" parent="." instance=ExtResource("6_rf5yw")]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://dl46lbkpkobmu"]
+[gd_scene load_steps=15 format=3 uid="uid://dl46lbkpkobmu"]
 
 [ext_resource type="Texture2D" uid="uid://dpfp2wk2eusrs" path="res://Assets/Player/D&L.reference_dummy.png" id="1_5n1dc"]
 [ext_resource type="Script" path="res://player_2.gd" id="1_n283e"]
@@ -8,6 +8,7 @@
 [ext_resource type="AudioStream" uid="uid://b28o52fq8l3tp" path="res://Assets/Sound/SFX/Player/GWJ75_walk4.mp3" id="6_hovrf"]
 [ext_resource type="AudioStream" uid="uid://c641njc7g60jr" path="res://Assets/Sound/SFX/Player/Player_CBswing1.mp3" id="7_pj2u4"]
 [ext_resource type="AudioStream" uid="uid://dt70allp033r3" path="res://Assets/Sound/SFX/Player/GWJ75_Fallnew.mp3" id="8_1bc3c"]
+[ext_resource type="PackedScene" uid="uid://c752ye2qiju3r" path="res://Scenes/UserInterface/gui.tscn" id="9_eq88v"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_e0fj2"]
 size = Vector2(10, 28)
@@ -53,7 +54,7 @@ debug_color = Color(0.995946, 0, 0.196073, 0.42)
 texture = ExtResource("1_5n1dc")
 
 [node name="Camera2D" type="Camera2D" parent="."]
-zoom = Vector2(2, 2)
+zoom = Vector2(5, 5)
 process_callback = 0
 limit_smoothed = true
 position_smoothing_enabled = true
@@ -87,6 +88,8 @@ stream = SubResource("AudioStreamRandomizer_kw3tr")
 volume_db = -2.0
 max_distance = 150.0
 bus = &"SFXEnv"
+
+[node name="GUI" parent="." instance=ExtResource("9_eq88v")]
 
 [connection signal="area_entered" from="HurtBox" to="." method="_on_hurt_box_area_entered"]
 [connection signal="timeout" from="Timers/BufferTimer" to="." method="_on_buffer_timer_timeout"]

@@ -44,8 +44,9 @@ func life_lost():
 		respawn_player()
 
 func point_collected():
+	printt("PointCollected: " , remaining_points)
 	remaining_points = max(0,remaining_points-1)
-	
+	printt("PointCollected: " , remaining_points)
 	
 
 func reset_level():
