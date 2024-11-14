@@ -20,25 +20,36 @@ class_name Player
 @export var activeCamera : bool = true
 @onready var levelcontroller : master_reflection # Wtf?
 
-## Sound stuff
+## mutt stuff
 @onready var Walk = $Walk
 @onready var Jump = $Jump
 @onready var Fall = $Fall
 @export var step_cooldown = 0.44
 var time_since_last_step = 0.0
-
+@onready var Sprite = $Sprite2D # Reference to the player's sprite
+@onready var Torch = $TorchFire  # Reference to the particle effect
+var torch_offset = Vector2(8, -12)
 # Track if the player was on the ground in the previous frame
 var was_on_floor: bool = true
 
 func _ready():
 	
-	
+	Torch.position = torch_offset
 
 	if !activeCamera:
 		camera.queue_free()
 		levelcontroller = get_parent()
 
 func _physics_process(delta: float) -> void:
+	
+	if Input.is_action_pressed("move_right"):
+		Sprite.flip_h = false
+		Torch.position = torch_offset 
+
+	elif Input.is_action_pressed("move_left"):
+		Sprite.flip_h = true
+		Torch.position = Vector2(-torch_offset.x, torch_offset.y)
+	
 	if !activeCamera and position.y >= 5:
 		levelcontroller.reset_level()
 

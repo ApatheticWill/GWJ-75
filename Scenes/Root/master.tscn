@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=4 uid="uid://tljxvprshpm0"]
+[gd_scene load_steps=37 format=4 uid="uid://tljxvprshpm0"]
 
 [ext_resource type="Script" path="res://Scripts/Root/master.gd" id="1_l2pvh"]
 [ext_resource type="Texture2D" uid="uid://iplgob1wmjvl" path="res://Assets/Tileset/project_memory.platformer_tileset.png" id="1_utggq"]
@@ -18,6 +18,7 @@
 [ext_resource type="Texture2D" uid="uid://cye3tjemgerua" path="res://Assets/Tileset/grass_atlas.png" id="12_e0fn3"]
 [ext_resource type="AudioStream" uid="uid://cidedxbvo4w3k" path="res://Assets/Sound/SFX/Enviroment/GWJ75_worldtransitionSFX2.mp3" id="13_76pcj"]
 [ext_resource type="Texture2D" uid="uid://kc75ocvqg1pp" path="res://ParticleStuff/tileset_beta1.png" id="14_vhkcv"]
+[ext_resource type="AudioStream" uid="uid://cabc42053iso4" path="res://Assets/Sound/SFX/Enviroment/GWJ75_WindTest2.mp3" id="19_48qb6"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_imkx8"]
 size = Vector2(4, 112)
@@ -375,7 +376,7 @@ tile_map_data = PackedByteArray("AADm//z/AQABAAAAAADn//z/AQABAAAAAADo//z/AQABAAA
 tile_set = SubResource("TileSet_pbcfv")
 
 [node name="Player" parent="." instance=ExtResource("2_58ltc")]
-position = Vector2(-385, -79)
+position = Vector2(-786, -94)
 
 [node name="Music" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("5_cako1")
@@ -394,6 +395,14 @@ position = Vector2(2661, 363)
 stream = ExtResource("6_4l7sn")
 autoplay = true
 max_distance = 200.0
+parameters/looping = true
+
+[node name="WindLeft" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("19_48qb6")
+volume_db = -6.0
+autoplay = true
+attenuation = 1.1487
+bus = &"SFXEnv"
 parameters/looping = true
 
 [connection signal="body_entered" from="InfoAreas/JumpInfoArea" to="." method="_on_jump_info_area_body_entered"]
