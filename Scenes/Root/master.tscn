@@ -15,7 +15,7 @@
 [ext_resource type="AudioStream" uid="uid://du2dtk3dhod6l" path="res://Assets/Sound/SFX/Enviroment/GWJ75_drops.mp3" id="6_4l7sn"]
 [ext_resource type="Resource" uid="uid://3kum0twsquca" path="res://Assets/Resource/challenge_2.tres" id="6_snt6k"]
 [ext_resource type="PackedScene" uid="uid://deal06fk0k00g" path="res://Scenes/Environment/text_tablet.tscn" id="11_p6hro"]
-[ext_resource type="AudioStream" uid="uid://cidedxbvo4w3k" path="res://Assets/Sound/SFX/Enviroment/GWJ75_worldtransitionSFX2.mp3" id="13_76pcj"]
+[ext_resource type="AudioStream" uid="uid://cx7sbdjomqtfs" path="res://Assets/Sound/SFX/Enviroment/GWJ75_worldtransitionSFX.mp3" id="15_bhh7y"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_imkx8"]
 size = Vector2(4, 112)
@@ -292,7 +292,7 @@ bus = &"Music"
 parameters/looping = true
 
 [node name="PortalIn" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("13_76pcj")
+stream = ExtResource("15_bhh7y")
 volume_db = -4.0
 bus = &"SFXEnv"
 
