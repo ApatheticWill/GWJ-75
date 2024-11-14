@@ -30,15 +30,29 @@ var time_since_last_step = 0.0
 # Track if the player was on the ground in the previous frame
 var was_on_floor: bool = true
 
+## Sprite test
+@onready var sprite = $Sprite2D  
+@onready var particles = $Sprite2D/GPUParticles2D 
+var particle_offset = Vector2(14, -25)
+
 func _ready():
 	
-	
+	particles.position = particle_offset
 
 	if !activeCamera:
 		camera.queue_free()
 		levelcontroller = get_parent()
 
 func _physics_process(delta: float) -> void:
+	
+	##sprite test
+	if Input.is_action_pressed("move_right"):
+		sprite.flip_h = false
+		particles.position = particle_offset
+	elif Input.is_action_pressed("move_left"):
+		sprite.flip_h = true
+		particles.position = Vector2(-particle_offset.x, particle_offset.y) 
+	
 	if !activeCamera and position.y >= 5:
 		levelcontroller.reset_level()
 

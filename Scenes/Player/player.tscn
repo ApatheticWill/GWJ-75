@@ -1,13 +1,14 @@
-[gd_scene load_steps=14 format=3 uid="uid://dl46lbkpkobmu"]
+[gd_scene load_steps=15 format=3 uid="uid://dl46lbkpkobmu"]
 
-[ext_resource type="Texture2D" uid="uid://dpfp2wk2eusrs" path="res://Assets/Player/D&L.reference_dummy.png" id="1_5n1dc"]
 [ext_resource type="Script" path="res://player_2.gd" id="1_n283e"]
+[ext_resource type="Texture2D" uid="uid://kk7vit7ur1kq" path="res://Assets/Player/chartest.png" id="2_egud6"]
 [ext_resource type="AudioStream" uid="uid://biyriars5u1eo" path="res://Assets/Sound/SFX/Player/GWJ75_walk1.mp3" id="3_kmy7d"]
 [ext_resource type="AudioStream" uid="uid://bjokmmolqdi8o" path="res://Assets/Sound/SFX/Player/GWJ75_walk2.mp3" id="4_ao87a"]
 [ext_resource type="AudioStream" uid="uid://cokmuh1wswcx4" path="res://Assets/Sound/SFX/Player/GWJ75_walk3.mp3" id="5_eknax"]
 [ext_resource type="AudioStream" uid="uid://b28o52fq8l3tp" path="res://Assets/Sound/SFX/Player/GWJ75_walk4.mp3" id="6_hovrf"]
 [ext_resource type="AudioStream" uid="uid://c641njc7g60jr" path="res://Assets/Sound/SFX/Player/Player_CBswing1.mp3" id="7_pj2u4"]
 [ext_resource type="AudioStream" uid="uid://dt70allp033r3" path="res://Assets/Sound/SFX/Player/GWJ75_Fallnew.mp3" id="8_1bc3c"]
+[ext_resource type="PackedScene" uid="uid://b74fmuaee4j0p" path="res://firetest.tscn" id="9_gkgx0"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_e0fj2"]
 size = Vector2(10, 28)
@@ -50,7 +51,20 @@ shape = SubResource("CapsuleShape2D_qw2mx")
 debug_color = Color(0.995946, 0, 0.196073, 0.42)
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_5n1dc")
+position = Vector2(3, 1.49012e-08)
+scale = Vector2(0.476563, 0.476563)
+texture = ExtResource("2_egud6")
+
+[node name="GPUParticles2D" parent="Sprite2D" instance=ExtResource("9_gkgx0")]
+position = Vector2(16.7869, -29.377)
+scale = Vector2(2.09836, 2.09836)
+lifetime = 0.2
+speed_scale = 0.5
+emission_sphere_radius = 0.44
+gravity = Vector2(0, -8)
+scale_amount_min = 0.2
+scale_amount_max = 0.2
+hue_variation_max = 0.04
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(2, 2)
@@ -71,13 +85,13 @@ one_shot = true
 
 [node name="Walk" type="AudioStreamPlayer2D" parent="."]
 stream = SubResource("AudioStreamRandomizer_fh0ee")
-volume_db = -6.2
+volume_db = -2.0
 max_distance = 100.0
 bus = &"SFXEnv"
 
 [node name="Jump" type="AudioStreamPlayer2D" parent="."]
 stream = SubResource("AudioStreamRandomizer_5hlab")
-volume_db = -4.0
+volume_db = -2.0
 pitch_scale = 1.33
 max_distance = 50.0
 bus = &"SFXEnv"
@@ -87,6 +101,9 @@ stream = SubResource("AudioStreamRandomizer_kw3tr")
 volume_db = -2.0
 max_distance = 150.0
 bus = &"SFXEnv"
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="."]
+position = Vector2(1, 1)
 
 [connection signal="area_entered" from="HurtBox" to="." method="_on_hurt_box_area_entered"]
 [connection signal="timeout" from="Timers/BufferTimer" to="." method="_on_buffer_timer_timeout"]
