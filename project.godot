@@ -45,6 +45,10 @@ folder_colors={
 "res://Scripts/": "yellow"
 }
 
+[gui]
+
+theme/custom_font="res://Assets/Resource/handwriting-draft_free-version.ttf"
+
 [input]
 
 move_left={

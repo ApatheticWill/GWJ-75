@@ -13,6 +13,7 @@ class_name Master
 @onready var player: Player = $Player
 @onready var jump_info_area: Area2D = $InfoAreas/JumpInfoArea
 @onready var interact_info_area: Area2D = $InfoAreas/InteractInfoArea
+@onready var text_tablet: TextTablet = $TextTablet
 
 func _ready() -> void:
 	
@@ -30,18 +31,22 @@ func check_for_progress() -> void:
 		Eventbus.change_tutorial_text.emit("[center][WASD] To Move![/center]")
 	
 	if GameManager.first_challenge_beaten:
+		text_tablet.call_deferred("queue_free")
 		challenge_mirror_1.call_deferred("queue_free")
 		first_challenge_door.call_deferred("queue_free")
 	
 	if GameManager.second_challenge_beaten:
+		text_tablet.call_deferred("queue_free")
 		challenge_mirror_2.call_deferred("queue_free")
 		second_challenge_door.call_deferred("queue_free")
 	
 	if GameManager.third_challenge_beaten:
+		text_tablet.call_deferred("queue_free")
 		challenge_mirror_3.call_deferred("queue_free")
 		third_challenge_door.call_deferred("queue_free")
 
 	if GameManager.challenges_beaten:
+		text_tablet.call_deferred("queue_free")
 		final_door.call_deferred("queue_free")
 
 func _on_jump_info_area_body_entered(body: Node2D) -> void:

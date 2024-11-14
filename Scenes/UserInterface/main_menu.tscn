@@ -1,7 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://dc30rdt8jtwgf"]
+[gd_scene load_steps=6 format=3 uid="uid://dc30rdt8jtwgf"]
 
 [ext_resource type="Script" path="res://Scripts/UserInterface/main_menu.gd" id="1_y2ble"]
 [ext_resource type="PackedScene" uid="uid://b3ucytmm3fw3i" path="res://Scenes/UserInterface/settings_menu.tscn" id="2_ct3ea"]
+[ext_resource type="PackedScene" uid="uid://cjk50626hbxwf" path="res://Scenes/UserInterface/transition_player.tscn" id="2_q53lk"]
+[ext_resource type="PackedScene" uid="uid://co0lu1ncwe4uo" path="res://Scenes/UserInterface/begin_text_background.tscn" id="4_x3ai7"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_lcpyw"]
 
@@ -25,14 +27,14 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -147.5
-offset_top = -112.0
-offset_right = 147.5
-offset_bottom = -70.0
+offset_left = -300.0
+offset_top = -305.0
+offset_right = 350.0
+offset_bottom = -236.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_font_sizes/font_size = 30
-text = "PLACEHOLDER TITLE"
+theme_override_font_sizes/font_size = 65
+text = "HETEROTOPIA"
 
 [node name="ButtonContainer" type="VBoxContainer" parent="."]
 layout_mode = 1
@@ -41,65 +43,61 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -114.5
-offset_top = -9.0
-offset_right = 114.5
-offset_bottom = 160.0
+offset_left = -238.5
+offset_top = -37.0
+offset_right = 238.5
+offset_bottom = 266.0
 grow_horizontal = 2
 grow_vertical = 2
 
 [node name="StartButton" type="Button" parent="ButtonContainer"]
 layout_mode = 2
-theme_override_colors/font_hover_pressed_color = Color(0.4264, 0.80688, 0.82, 1)
-theme_override_colors/font_hover_color = Color(0.427451, 0.807843, 0.819608, 1)
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_colors/font_hover_pressed_color = Color(0.988235, 0.905882, 0.533333, 1)
+theme_override_colors/font_hover_color = Color(0.988235, 0.905882, 0.533333, 1)
+theme_override_colors/font_pressed_color = Color(1, 0.948667, 0.72, 1)
 theme_override_font_sizes/font_size = 25
 theme_override_styles/focus = SubResource("StyleBoxEmpty_lcpyw")
 text = "Start Game"
 flat = true
 
-[node name="Control" type="Control" parent="ButtonContainer"]
+[node name="Control10" type="Control" parent="ButtonContainer"]
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="Control3" type="Control" parent="ButtonContainer"]
-layout_mode = 2
-
-[node name="Control5" type="Control" parent="ButtonContainer"]
-layout_mode = 2
-
-[node name="Control6" type="Control" parent="ButtonContainer"]
-layout_mode = 2
-
 [node name="SettingsButton" type="Button" parent="ButtonContainer"]
 layout_mode = 2
-theme_override_colors/font_hover_pressed_color = Color(0.4264, 0.80688, 0.82, 1)
-theme_override_colors/font_hover_color = Color(0.427451, 0.807843, 0.819608, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.988235, 0.905882, 0.533333, 1)
+theme_override_colors/font_hover_color = Color(0.988235, 0.905882, 0.533333, 1)
+theme_override_colors/font_pressed_color = Color(1, 0.948667, 0.72, 1)
 theme_override_font_sizes/font_size = 25
 theme_override_styles/focus = SubResource("StyleBoxEmpty_lcpyw")
 text = "Configure Settings
 "
 flat = true
 
-[node name="Control2" type="Control" parent="ButtonContainer"]
-layout_mode = 2
-
-[node name="Control7" type="Control" parent="ButtonContainer"]
-layout_mode = 2
-
-[node name="Control8" type="Control" parent="ButtonContainer"]
-layout_mode = 2
-
 [node name="Control4" type="Control" parent="ButtonContainer"]
 layout_mode = 2
+size_flags_vertical = 3
 
 [node name="QuitButton" type="Button" parent="ButtonContainer"]
 layout_mode = 2
-theme_override_colors/font_hover_pressed_color = Color(0.4264, 0.80688, 0.82, 1)
-theme_override_colors/font_hover_color = Color(0.427451, 0.807843, 0.819608, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.988235, 0.905882, 0.533333, 1)
+theme_override_colors/font_hover_color = Color(0.988235, 0.905882, 0.533333, 1)
+theme_override_colors/font_pressed_color = Color(1, 0.948667, 0.72, 1)
 theme_override_font_sizes/font_size = 25
 theme_override_styles/focus = SubResource("StyleBoxEmpty_lcpyw")
 text = "Quit Game"
 flat = true
+
+[node name="TransitionPlayer" parent="." instance=ExtResource("2_q53lk")]
+visible = false
+layout_mode = 1
+
+[node name="BeginTextBackground" parent="." instance=ExtResource("4_x3ai7")]
+visible = false
+layout_mode = 1
 
 [connection signal="pressed" from="ButtonContainer/StartButton" to="." method="_on_start_button_pressed"]
 [connection signal="pressed" from="ButtonContainer/SettingsButton" to="." method="_on_settings_button_pressed"]

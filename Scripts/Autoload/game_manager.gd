@@ -34,7 +34,7 @@ func on_challenge_beaten(index : int) -> void:
 		
 		third_challenge_beaten = true
 	
-	elif tutorial_beaten && first_challenge_beaten && second_challenge_beaten && third_challenge_beaten:
+	if tutorial_beaten && first_challenge_beaten && second_challenge_beaten && third_challenge_beaten:
 		
 		challenges_beaten = true
 
