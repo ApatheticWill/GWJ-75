@@ -11,6 +11,7 @@ var remaining_points: int
 
 func _ready() -> void:
 	
+	Eventbus.change_tutorial_text.emit("[center]Mind your footing...[/center]")
 	Eventbus.reflection_died.connect(on_reflection_died)
 	player.can_move = true
 	remaining_points = points_to_collect
