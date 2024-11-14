@@ -2,12 +2,12 @@
 
 [ext_resource type="Script" path="res://player_2.gd" id="1_n283e"]
 [ext_resource type="Texture2D" uid="uid://dol5blarb7v6j" path="res://Assets/Player/chartest.png" id="2_egud6"]
-[ext_resource type="AudioStream" uid="uid://biyriars5u1eo" path="res://Assets/Sound/SFX/Player/GWJ75_walk1.mp3" id="3_kmy7d"]
-[ext_resource type="AudioStream" uid="uid://bjokmmolqdi8o" path="res://Assets/Sound/SFX/Player/GWJ75_walk2.mp3" id="4_ao87a"]
-[ext_resource type="AudioStream" uid="uid://cokmuh1wswcx4" path="res://Assets/Sound/SFX/Player/GWJ75_walk3.mp3" id="5_eknax"]
-[ext_resource type="AudioStream" uid="uid://b28o52fq8l3tp" path="res://Assets/Sound/SFX/Player/GWJ75_walk4.mp3" id="6_hovrf"]
-[ext_resource type="AudioStream" uid="uid://c641njc7g60jr" path="res://Assets/Sound/SFX/Player/Player_CBswing1.mp3" id="7_pj2u4"]
-[ext_resource type="AudioStream" uid="uid://dt70allp033r3" path="res://Assets/Sound/SFX/Player/GWJ75_Fallnew.mp3" id="8_1bc3c"]
+[ext_resource type="AudioStream" path="res://Assets/Sound/SFX/Player/GWJ75_walk1.mp3" id="3_kmy7d"]
+[ext_resource type="AudioStream" path="res://Assets/Sound/SFX/Player/GWJ75_walk2.mp3" id="4_ao87a"]
+[ext_resource type="AudioStream" path="res://Assets/Sound/SFX/Player/GWJ75_walk3.mp3" id="5_eknax"]
+[ext_resource type="AudioStream" path="res://Assets/Sound/SFX/Player/GWJ75_walk4.mp3" id="6_hovrf"]
+[ext_resource type="AudioStream" path="res://Assets/Sound/SFX/Player/Player_CBswing1.mp3" id="7_pj2u4"]
+[ext_resource type="AudioStream" path="res://Assets/Sound/SFX/Player/GWJ75_Fallnew.mp3" id="8_1bc3c"]
 [ext_resource type="PackedScene" uid="uid://gs4maa4ugupg" path="res://firetest.tscn" id="9_gkgx0"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_e0fj2"]
@@ -38,6 +38,8 @@ stream_0/stream = ExtResource("8_1bc3c")
 [node name="Player" type="CharacterBody2D" groups=["Player"]]
 collision_layer = 2
 script = ExtResource("1_n283e")
+activeCamera = null
+step_cooldown = null
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_e0fj2")
