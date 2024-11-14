@@ -1,0 +1,30 @@
+[gd_resource type="ParticleProcessMaterial" load_steps=5 format=3 uid="uid://cfe2qcwx32k8u"]
+
+[sub_resource type="Curve" id="1"]
+min_value = -360.0
+max_value = 360.0
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 85.0781), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="2"]
+curve = SubResource("1")
+
+[sub_resource type="Curve" id="3"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="4"]
+curve = SubResource("3")
+
+[resource]
+lifetime_randomness = 0.05
+emission_shape = 1
+emission_sphere_radius = 1.0
+direction = Vector3(1, -500, 0)
+angular_velocity_curve = SubResource("2")
+gravity = Vector3(0, 500, 0)
+scale_min = 0.0
+scale_max = 0.0
+scale_curve = SubResource("4")
+color = Color(0.859375, 0.180278, 0.0469971, 1)
+turbulence_noise_scale = 2.484
