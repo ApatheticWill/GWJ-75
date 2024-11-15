@@ -66,3 +66,11 @@ func _on_interact_info_area_body_entered(body: Node2D) -> void:
 	interact_info_area.call_deferred("queue_free")
 	Eventbus.change_tutorial_text.emit("[center][E] To Interact![/center]")
 	
+
+
+func _on_border_area_body_entered(body: Node2D) -> void:
+	
+	if !body is Player:
+		return
+	
+	Eventbus.text_to_display.emit("[center]You can't turn back.[/center]", "", "")

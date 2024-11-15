@@ -42,13 +42,13 @@ func _ready():
 
 func _physics_process(delta: float) -> void:
 	
-	if Input.is_action_pressed("move_right"):
+	if Input.is_action_pressed("move_right") && can_move:
 		Sprite.flip_h = false
 		Torch.position = torch_offset 
 
-	elif Input.is_action_pressed("move_left"):
+	elif Input.is_action_pressed("move_left") && can_move:
 		Sprite.flip_h = true
-		Torch.position = Vector2(-torch_offset.x, torch_offset.y)
+		Torch.position = Vector2(-torch_offset.x + 3, torch_offset.y)
 	
 	if !activeCamera and position.y >= 5:
 		levelcontroller.reset_level()

@@ -104,11 +104,11 @@ spawn_position = Vector2(-199, 56)
 controller = NodePath("..")
 
 [node name="Heart" parent="." instance=ExtResource("5_ox470")]
-position = Vector2(-5, 79)
+position = Vector2(15, 79)
 rotation = 3.14159
 
 [node name="DoorReflection" parent="." node_paths=PackedStringArray("controller") instance=ExtResource("6_wxuth")]
-position = Vector2(185, 56)
+position = Vector2(205, 57)
 controller = NodePath("..")
 spawn_position = Vector2(185, 56)
 challenge_index = 1
