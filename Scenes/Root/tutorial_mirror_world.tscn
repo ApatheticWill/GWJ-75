@@ -98,7 +98,6 @@ zoom = Vector2(3, 3)
 
 [node name="PlayerReflection" parent="." node_paths=PackedStringArray("player", "controller") instance=ExtResource("3_11xrf")]
 position = Vector2(-199, 56)
-rotation = 3.14159
 player = NodePath("../Player")
 spawn_position = Vector2(-199, 56)
 controller = NodePath("..")
