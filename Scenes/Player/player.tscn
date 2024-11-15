@@ -94,7 +94,7 @@ bus = &"SFXEnv"
 
 [node name="GUI" parent="." instance=ExtResource("9_eq88v")]
 
-[node name="GPUParticles2D" parent="." instance=ExtResource("10_s8id0")]
+[node name="TorchFire" parent="." instance=ExtResource("10_s8id0")]
 position = Vector2(8, -12)
 scale = Vector2(0.3, 0.3)
 scale_amount_min = 0.71
