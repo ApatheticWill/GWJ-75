@@ -1,0 +1,28 @@
+[gd_scene load_steps=4 format=3 uid="uid://bsyjs4di2dxe3"]
+
+[ext_resource type="Texture2D" uid="uid://c1h4gmu18o8rh" path="res://ParticleStuff/smoke/image603.png" id="1_vt3na"]
+[ext_resource type="Texture2D" uid="uid://df6idn00p3y13" path="res://ParticleStuff/light2.png" id="2_t6s08"]
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_dgy6q"]
+particle_flag_disable_z = true
+emission_shape = 2
+emission_sphere_radius = 1.0
+gravity = Vector3(1, -7, 0)
+scale_min = 0.17
+scale_max = 0.2
+turbulence_enabled = true
+
+[node name="Point" type="GPUParticles2D"]
+amount = 7
+amount_ratio = 0.8
+process_material = SubResource("ParticleProcessMaterial_dgy6q")
+texture = ExtResource("1_vt3na")
+local_coords = true
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+color = Color(0.698039, 1, 1, 0.843137)
+energy = 3.0
+shadow_enabled = true
+shadow_color = Color(0.254902, 0.254902, 0.254902, 0.729412)
+texture = ExtResource("2_t6s08")
+texture_scale = 0.3
