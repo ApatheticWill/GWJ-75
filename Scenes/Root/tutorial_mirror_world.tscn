@@ -96,6 +96,12 @@ activeCamera = false
 [node name="LockedCamera" type="Camera2D" parent="."]
 zoom = Vector2(3, 3)
 
+[node name="DoorReflection" parent="." node_paths=PackedStringArray("controller") instance=ExtResource("6_wxuth")]
+position = Vector2(205, 57)
+controller = NodePath("..")
+spawn_position = Vector2(185, 56)
+challenge_index = 1
+
 [node name="PlayerReflection" parent="." node_paths=PackedStringArray("player", "controller") instance=ExtResource("3_11xrf")]
 position = Vector2(-199, 56)
 player = NodePath("../Player")
@@ -105,12 +111,6 @@ controller = NodePath("..")
 [node name="Heart" parent="." instance=ExtResource("5_ox470")]
 position = Vector2(15, 79)
 rotation = 3.14159
-
-[node name="DoorReflection" parent="." node_paths=PackedStringArray("controller") instance=ExtResource("6_wxuth")]
-position = Vector2(205, 57)
-controller = NodePath("..")
-spawn_position = Vector2(185, 56)
-challenge_index = 1
 
 [node name="ReflectionHazard" parent="." instance=ExtResource("7_dincc")]
 collision_layer = 8

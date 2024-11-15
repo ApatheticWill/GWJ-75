@@ -1,10 +1,13 @@
-[gd_scene load_steps=4 format=3 uid="uid://c752ye2qiju3r"]
+[gd_scene load_steps=6 format=3 uid="uid://c752ye2qiju3r"]
 
 [ext_resource type="PackedScene" uid="uid://bbltcgv4fvq84" path="res://Scenes/UserInterface/tutorial_box.tscn" id="1_mqtso"]
+[ext_resource type="Script" path="res://Scripts/UserInterface/gui.gd" id="1_nu0mh"]
 [ext_resource type="PackedScene" uid="uid://dys1h3fpmulto" path="res://Scenes/UserInterface/pause_menu.tscn" id="1_qmv1r"]
 [ext_resource type="PackedScene" uid="uid://byefxqkar4n6h" path="res://Scenes/UserInterface/dialogue_box.tscn" id="2_nw7oh"]
+[ext_resource type="PackedScene" uid="uid://cjk50626hbxwf" path="res://Scenes/UserInterface/transition_player.tscn" id="4_w4d8e"]
 
 [node name="GUI" type="CanvasLayer"]
+script = ExtResource("1_nu0mh")
 
 [node name="TutorialBox" parent="." instance=ExtResource("1_mqtso")]
 
@@ -12,4 +15,7 @@
 visible = false
 
 [node name="PauseMenu" parent="." instance=ExtResource("1_qmv1r")]
+visible = false
+
+[node name="TransitionPlayer" parent="." instance=ExtResource("4_w4d8e")]
 visible = false

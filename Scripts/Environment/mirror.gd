@@ -6,12 +6,14 @@ class_name Mirror
 
 @onready var highlight = preload("res://Assets/Environment/mirror_highlighted.png")
 @onready var default = preload("res://Assets/Environment/mirror_base.png")
+@onready var dark = preload("res://Assets/Environment/mirror_dark.png")
 @onready var interactable : bool = false
 @onready var is_interacted : bool = false
 @onready var player : Player = get_tree().get_first_node_in_group("Player")
 @onready var interaction_zone: Area2D = $InteractionZone
 @onready var sprite_2d: Sprite2D = $Sprite2D
 @onready var player_reflection: Sprite2D = $PlayerReflection
+@onready var collision_shape_2d: CollisionShape2D = $InteractionZone/CollisionShape2D
 
 ## Sound stuff
 @onready var GameMusic = $"../../Music"  # Background music
@@ -25,6 +27,7 @@ func _ready() -> void:
 func _unhandled_key_input(event: InputEvent) -> void:
 	
 	if event.is_action_pressed("interact") and interactable:
+		player.gui.transition_player.transition_in()
 		sprite_2d.texture = default
 		player.can_move = false
 		interactable = false

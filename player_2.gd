@@ -19,6 +19,7 @@ class_name Player
 @onready var camera: Camera2D = $Camera2D
 @export var activeCamera : bool = true
 @onready var levelcontroller : master_reflection # Wtf?
+@onready var gui: GUI = $GUI
 
 ## mutt stuff
 @onready var Walk = $Walk
@@ -34,6 +35,8 @@ var was_on_floor: bool = true
 
 func _ready():
 	
+	gui.transition_player.show()
+	gui.transition_player.transition_out()
 	Torch.position = torch_offset
 
 	if !activeCamera:

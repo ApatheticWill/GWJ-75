@@ -351,17 +351,17 @@ scene_resource = ExtResource("4_s5lb0")
 respawn_point = Vector2(570.834, 81)
 
 [node name="ChallengeMirror1" parent="Mirrors" instance=ExtResource("3_k2vys")]
-position = Vector2(1644, -244)
+position = Vector2(1648, -244)
 scene_resource = ExtResource("5_m30yn")
 respawn_point = Vector2(1645, -224)
 
 [node name="ChallengeMirror2" parent="Mirrors" instance=ExtResource("3_k2vys")]
-position = Vector2(2089, 685)
+position = Vector2(2093, 683)
 scene_resource = ExtResource("6_snt6k")
 respawn_point = Vector2(2089, 705)
 
 [node name="ChallengeMirror3" parent="Mirrors" instance=ExtResource("3_k2vys")]
-position = Vector2(3072, 493)
+position = Vector2(3072, 490)
 scene_resource = ExtResource("7_54t3v")
 respawn_point = Vector2(3072, 513)
 
@@ -495,7 +495,7 @@ tile_set = SubResource("TileSet_fl10p")
 tile_set = SubResource("TileSet_pbcfv")
 
 [node name="Player" parent="." instance=ExtResource("2_58ltc")]
-position = Vector2(-385, -79)
+position = Vector2(-385, -80)
 
 [node name="Music" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("5_cako1")

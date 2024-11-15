@@ -14,6 +14,7 @@ class_name Master
 @onready var jump_info_area: Area2D = $InfoAreas/JumpInfoArea
 @onready var interact_info_area: Area2D = $InfoAreas/InteractInfoArea
 @onready var text_tablet: TextTablet = $TextTablet
+@onready var dark = preload("res://Scenes/Environment/dark_mirror.tscn")
 
 func _ready() -> void:
 	
@@ -25,22 +26,34 @@ func _ready() -> void:
 func check_for_progress() -> void:
 	
 	if GameManager.tutorial_beaten:
+		var dark_mirror_1 = dark.instantiate()
+		dark_mirror_1.global_position = tutorial_mirror.global_position
+		add_child(dark_mirror_1)
 		tutorial_mirror.call_deferred("queue_free")
 		tutorial_door.call_deferred("queue_free")
 	else:
 		Eventbus.change_tutorial_text.emit("[center][WASD] To Move![/center]")
 	
 	if GameManager.first_challenge_beaten:
+		var dark_mirror_2 = dark.instantiate()
+		dark_mirror_2.global_position = challenge_mirror_1.global_position
+		add_child(dark_mirror_2)
 		text_tablet.call_deferred("queue_free")
 		challenge_mirror_1.call_deferred("queue_free")
 		first_challenge_door.call_deferred("queue_free")
 	
 	if GameManager.second_challenge_beaten:
+		var dark_mirror_3 = dark.instantiate()
+		dark_mirror_3.global_position = challenge_mirror_2.global_position
+		add_child(dark_mirror_3)
 		text_tablet.call_deferred("queue_free")
 		challenge_mirror_2.call_deferred("queue_free")
 		second_challenge_door.call_deferred("queue_free")
 	
 	if GameManager.third_challenge_beaten:
+		var dark_mirror_4 = dark.instantiate()
+		dark_mirror_4.global_position = challenge_mirror_3.global_position
+		add_child(dark_mirror_4)
 		text_tablet.call_deferred("queue_free")
 		challenge_mirror_3.call_deferred("queue_free")
 		third_challenge_door.call_deferred("queue_free")

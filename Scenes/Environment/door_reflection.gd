@@ -23,6 +23,7 @@ func _on_area_entered(_area):
 	if !controller.check_pass_level():
 		return
 	
+	player.gui.transition_player.transition_in()
 	player.can_move = false
 	MainMusic.stop()
 	PortalOut.play()
