@@ -51,6 +51,7 @@ shape = SubResource("CapsuleShape2D_qw2mx")
 debug_color = Color(0.995946, 0, 0.196073, 0.42)
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+<<<<<<< Updated upstream
 position = Vector2(3, 1.49012e-08)
 scale = Vector2(0.476563, 0.476563)
 texture = ExtResource("2_egud6")
@@ -65,6 +66,11 @@ gravity = Vector2(0, -8)
 scale_amount_min = 0.2
 scale_amount_max = 0.2
 hue_variation_max = 0.04
+=======
+position = Vector2(2, 0.875)
+scale = Vector2(0.398438, 0.464844)
+texture = ExtResource("2_dnlgd")
+>>>>>>> Stashed changes
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(2, 2)
@@ -85,15 +91,20 @@ one_shot = true
 
 [node name="Walk" type="AudioStreamPlayer2D" parent="."]
 stream = SubResource("AudioStreamRandomizer_fh0ee")
+<<<<<<< Updated upstream
 volume_db = -2.0
 max_distance = 100.0
+=======
+volume_db = -5.0
+max_distance = 200.0
+>>>>>>> Stashed changes
 bus = &"SFXEnv"
 
 [node name="Jump" type="AudioStreamPlayer2D" parent="."]
 stream = SubResource("AudioStreamRandomizer_5hlab")
 volume_db = -2.0
 pitch_scale = 1.33
-max_distance = 50.0
+max_distance = 200.0
 bus = &"SFXEnv"
 
 [node name="Fall" type="AudioStreamPlayer2D" parent="."]

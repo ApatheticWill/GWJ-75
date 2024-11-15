@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://cbks3kqon3g34"]
+
+[ext_resource type="Texture2D" uid="uid://djy171gx46dwm" path="res://ParticleStuff/sindemon/image328.png" id="1_r8bmg"]
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_dda3q"]
+particle_flag_disable_z = true
+gravity = Vector3(0, -80, 0)
+scale_min = 0.5
+scale_max = 0.6
+turbulence_enabled = true
+turbulence_noise_strength = 3.32
+
+[node name="CPUParticles2D" type="GPUParticles2D"]
+scale = Vector2(0.3, 0.3)
+amount = 4
+process_material = SubResource("ParticleProcessMaterial_dda3q")
+texture = ExtResource("1_r8bmg")
+lifetime = 0.2
+preprocess = 2.0
+speed_scale = 0.2
+explosiveness = 0.2
+randomness = 0.13

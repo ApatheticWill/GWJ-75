@@ -140,3 +140,6 @@ y_start = 123
 x_final = 149
 y_final = 123
 seconds = 2.0
+
+[node name="Container" type="CanvasModulate" parent="."]
+color = Color(0.0807834, 0.0807833, 0.0807833, 1)
