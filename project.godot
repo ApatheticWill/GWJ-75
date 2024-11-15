@@ -10,7 +10,7 @@ config_version=5
 
 [application]
 
-config/name="GWJ #75 : Unnamed"
+config/name="GWJ #75 : Heterotopia"
 run/main_scene="res://Scenes/UserInterface/main_menu.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
 
@@ -93,3 +93,4 @@ return={
 [rendering]
 
 textures/canvas_textures/default_texture_filter=0
+textures/lossless_compression/force_png=true
