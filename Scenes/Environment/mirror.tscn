@@ -1,12 +1,13 @@
-[gd_scene load_steps=5 format=3 uid="uid://srgp31ms0blu"]
+[gd_scene load_steps=6 format=3 uid="uid://srgp31ms0blu"]
 
-[ext_resource type="Texture2D" uid="uid://833kbifke3vl" path="res://Assets/Environment/D&L.knowledge.png" id="1_dfbm2"]
 [ext_resource type="Script" path="res://Scripts/Environment/mirror.gd" id="1_x1wjv"]
+[ext_resource type="Texture2D" uid="uid://3t6crhauo5rl" path="res://Assets/Environment/mirror_base.png" id="2_duapf"]
+[ext_resource type="Texture2D" uid="uid://bxlf0mmvj6oa" path="res://ParticleStuff/Fire/chartest.png" id="3_s1x61"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0y7cr"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gsuh0"]
-size = Vector2(100, 70)
+size = Vector2(96, 66)
 
 [node name="Mirror" type="RigidBody2D"]
 collision_layer = 4
@@ -17,8 +18,15 @@ script = ExtResource("1_x1wjv")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_0y7cr")
 
+[node name="PlayerReflection" type="Sprite2D" parent="."]
+modulate = Color(0.125911, 0.125911, 0.125911, 1)
+position = Vector2(-19, 1)
+scale = Vector2(0.46875, 0.5)
+texture = ExtResource("3_s1x61")
+
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_dfbm2")
+scale = Vector2(0.197791, 0.197791)
+texture = ExtResource("2_duapf")
 
 [node name="InteractionZone" type="Area2D" parent="."]
 collision_layer = 4

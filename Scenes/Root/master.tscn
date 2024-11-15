@@ -1,7 +1,6 @@
-[gd_scene load_steps=38 format=4 uid="uid://tljxvprshpm0"]
+[gd_scene load_steps=39 format=4 uid="uid://tljxvprshpm0"]
 
 [ext_resource type="Script" path="res://Scripts/Root/master.gd" id="1_l2pvh"]
-[ext_resource type="Texture2D" uid="uid://iplgob1wmjvl" path="res://Assets/Tileset/project_memory.platformer_tileset.png" id="1_utggq"]
 [ext_resource type="PackedScene" uid="uid://bihnpld1ijdla" path="res://Scenes/Environment/hazard_area.tscn" id="2_04r6p"]
 [ext_resource type="PackedScene" uid="uid://dl46lbkpkobmu" path="res://Scenes/Player/player.tscn" id="2_58ltc"]
 [ext_resource type="PackedScene" uid="uid://cpy24sww483rp" path="res://Scenes/Environment/sealed_door.tscn" id="3_cml17"]
@@ -18,6 +17,7 @@
 [ext_resource type="Texture2D" uid="uid://cye3tjemgerua" path="res://Assets/Tileset/grass_atlas.png" id="12_e0fn3"]
 [ext_resource type="AudioStream" uid="uid://cidedxbvo4w3k" path="res://Assets/Sound/SFX/Enviroment/GWJ75_worldtransitionSFX2.mp3" id="13_76pcj"]
 [ext_resource type="Texture2D" uid="uid://kc75ocvqg1pp" path="res://ParticleStuff/tileset_beta1.png" id="14_2kuwd"]
+[ext_resource type="Texture2D" uid="uid://dqfutitgeplud" path="res://Assets/Tileset/dungeon16by16.png" id="15_bbcq1"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_imkx8"]
 size = Vector2(4, 112)
@@ -62,7 +62,7 @@ size = Vector2(271.606, 20)
 size = Vector2(464, 20)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mp2nb"]
-texture = ExtResource("1_utggq")
+texture = ExtResource("15_bbcq1")
 0:0/0 = 0
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -5.71429, 8, -5.71429, 8, 8, -8, 8)
 1:0/0 = 0
@@ -115,6 +115,18 @@ texture = ExtResource("1_utggq")
 6:6/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -5.71429, 8, -5.71429, 8, 8, -8, 8)
 7:6/0 = 0
 7:6/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -5.71429, 8, -5.71429, 8, 8, -8, 8)
+4:0/0 = 0
+4:1/0 = 0
+6:1/0 = 0
+4:2/0 = 0
+5:3/0 = 0
+7:3/0 = 0
+1:4/0 = 0
+1:5/0 = 0
+5:5/0 = 0
+6:5/0 = 0
+7:5/0 = 0
+1:6/0 = 0
 
 [sub_resource type="TileSet" id="TileSet_fl10p"]
 physics_layer_0/collision_layer = 1
@@ -242,9 +254,68 @@ texture = ExtResource("14_2kuwd")
 6:6/0 = 0
 7:6/0 = 0
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_il1jj"]
+texture = ExtResource("15_bbcq1")
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -5.33333, 8, -5.33333, 8, 8, -8, 8)
+1:0/0 = 0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -5.33333, 8, -5.33333, 8, 8, -8, 8)
+2:0/0 = 0
+2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -5.33333, 8, -5.33333, 8, 8, -8, 8)
+5:0/0 = 0
+6:0/0 = 0
+7:0/0 = 0
+0:1/0 = 0
+0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+1:1/0 = 0
+1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+2:1/0 = 0
+2:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+5:1/0 = 0
+6:1/0 = 0
+7:1/0 = 0
+0:2/0 = 0
+0:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+1:2/0 = 0
+1:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+2:2/0 = 0
+2:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+5:2/0 = 0
+6:2/0 = 0
+7:2/0 = 0
+0:4/0 = 0
+0:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -5.33333, 8, -5.33333, 8, 8, -8, 8)
+2:4/0 = 0
+2:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -5.33333, 8, -5.33333, 8, 8, -8, 8)
+3:4/0 = 0
+3:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -5.33333, 8, -5.33333, 8, 8, -8, 8)
+6:4/0 = 0
+6:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+0:5/0 = 0
+0:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+2:5/0 = 0
+2:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+3:5/0 = 0
+3:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+0:6/0 = 0
+0:6/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+2:6/0 = 0
+2:6/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+3:6/0 = 0
+3:6/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+5:6/0 = 0
+5:6/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -5.33333, 8, -5.33333, 8, 8, -8, 8)
+6:6/0 = 0
+6:6/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -5.33333, 8, -5.33333, 8, 8, -8, 8)
+7:6/0 = 0
+7:6/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -5.33333, 8, -5.33333, 8, 8, -8, 8)
+
 [sub_resource type="TileSet" id="TileSet_pbcfv"]
+physics_layer_0/collision_layer = 1
+physics_layer_0/collision_mask = 0
 sources/0 = SubResource("TileSetAtlasSource_3f36s")
 sources/1 = SubResource("TileSetAtlasSource_x1yop")
+sources/2 = SubResource("TileSetAtlasSource_il1jj")
 
 [node name="Master" type="Node"]
 script = ExtResource("1_l2pvh")
@@ -275,7 +346,7 @@ displayed_text = "[center]One must face three [shake][color=purple]Great Sins[/c
 [node name="Mirrors" type="Node" parent="."]
 
 [node name="TutorialMirror" parent="Mirrors" instance=ExtResource("3_k2vys")]
-position = Vector2(571, 60)
+position = Vector2(574, 60)
 scene_resource = ExtResource("4_s5lb0")
 respawn_point = Vector2(570.834, 81)
 
