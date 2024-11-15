@@ -1,0 +1,39 @@
+[gd_scene load_steps=4 format=3 uid="uid://c0rwpp15gipou"]
+
+[ext_resource type="Texture2D" uid="uid://lluhdk5vjp8i" path="res://ParticleStuff/puddle.png" id="1_0rto3"]
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_04ube"]
+particle_flag_disable_z = true
+gravity = Vector3(0, -5, 0)
+scale_min = 0.05
+scale_max = 0.08
+
+[sub_resource type="GDScript" id="GDScript_bkofk"]
+script/source = "extends GPUParticles2D
+
+var elapsed_time: float = 0.0
+var interval: float = 1
+
+func _ready() -> void:
+	# Start with the particles stopped (not emitting)
+	emitting = false
+
+func _process(delta: float) -> void:
+	# Increment the elapsed time by the frame time
+	elapsed_time += delta
+
+	# Check if the interval has passed
+	if elapsed_time >= interval:
+		# Toggle particle emission every 2 seconds
+		emitting = !emitting
+
+		# Reset the timer
+		elapsed_time = 0.0
+"
+
+[node name="GPUParticles2D" type="GPUParticles2D"]
+amount = 2
+process_material = SubResource("ParticleProcessMaterial_04ube")
+texture = ExtResource("1_0rto3")
+lifetime = 0.08
+script = SubResource("GDScript_bkofk")

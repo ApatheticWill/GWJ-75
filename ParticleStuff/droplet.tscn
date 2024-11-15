@@ -1,0 +1,25 @@
+[gd_scene load_steps=3 format=3 uid="uid://b1m036nocnh2r"]
+
+[ext_resource type="Texture2D" uid="uid://6n4flpycqse2" path="res://ParticleStuff/droplet.png" id="1_yv4wi"]
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_ek8u1"]
+particle_flag_disable_z = true
+gravity = Vector3(0, 80, 0)
+scale_min = 0.02
+scale_max = 0.03
+collision_mode = 1
+collision_friction = 0.0
+collision_bounce = 0.0
+
+[node name="Droplet" type="GPUParticles2D"]
+amount = 5
+process_material = SubResource("ParticleProcessMaterial_ek8u1")
+texture = ExtResource("1_yv4wi")
+lifetime = 30.0
+explosiveness = 0.07
+randomness = 0.18
+
+[node name="glow" type="PointLight2D" parent="."]
+color = Color(0.3773, 0.704519, 0.999999, 1)
+energy = 0.13
+texture = ExtResource("1_yv4wi")

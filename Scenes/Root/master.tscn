@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=4 uid="uid://tljxvprshpm0"]
+[gd_scene load_steps=36 format=4 uid="uid://tljxvprshpm0"]
 
 [ext_resource type="Script" path="res://Scripts/Root/master.gd" id="1_l2pvh"]
 [ext_resource type="PackedScene" uid="uid://bihnpld1ijdla" path="res://Scenes/Environment/hazard_area.tscn" id="2_04r6p"]
@@ -14,8 +14,10 @@
 [ext_resource type="Resource" uid="uid://3kum0twsquca" path="res://Assets/Resource/challenge_2.tres" id="6_snt6k"]
 [ext_resource type="Resource" uid="uid://c7yl5e5itmt1f" path="res://Assets/Resource/challenge_3.tres" id="7_54t3v"]
 [ext_resource type="PackedScene" uid="uid://deal06fk0k00g" path="res://Scenes/Environment/text_tablet.tscn" id="11_p6hro"]
-[ext_resource type="AudioStream" uid="uid://cidedxbvo4w3k" path="res://Assets/Sound/SFX/Enviroment/GWJ75_worldtransitionSFX2.mp3" id="13_76pcj"]
+[ext_resource type="AudioStream" uid="uid://cx7sbdjomqtfs" path="res://Assets/Sound/SFX/Enviroment/GWJ75_worldtransitionSFX.mp3" id="15_6h4mw"]
 [ext_resource type="Texture2D" uid="uid://dqfutitgeplud" path="res://Assets/Tileset/dungeon16by16.png" id="15_bbcq1"]
+[ext_resource type="AudioStream" uid="uid://cabc42053iso4" path="res://Assets/Sound/SFX/Enviroment/GWJ75_WindTest2.mp3" id="17_lvh6o"]
+[ext_resource type="PackedScene" uid="uid://b1m036nocnh2r" path="res://ParticleStuff/droplet.tscn" id="18_dtrs7"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_imkx8"]
 size = Vector2(4, 112)
@@ -305,21 +307,38 @@ position = Vector2(-385, -80)
 
 [node name="Music" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("5_cako1")
-volume_db = -13.0
+volume_db = -20.0
 autoplay = true
 bus = &"Music"
 parameters/looping = true
 
 [node name="PortalIn" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("13_76pcj")
-volume_db = -4.0
+stream = ExtResource("15_6h4mw")
+volume_db = -13.0
 bus = &"SFXEnv"
 
 [node name="WaterDrops" type="AudioStreamPlayer2D" parent="."]
-position = Vector2(2661, 363)
+position = Vector2(453.2, 96.6)
 stream = ExtResource("6_4l7sn")
 autoplay = true
-max_distance = 200.0
+max_distance = 80.0
+bus = &"SFXEnv"
+parameters/looping = true
+
+[node name="Droplet" parent="." instance=ExtResource("18_dtrs7")]
+position = Vector2(453.2, 32)
+scale = Vector2(0.05, 0.05)
+amount = 1
+lifetime = 1.2
+trail_sections = 3
+
+[node name="Wind" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(-716, -85)
+stream = ExtResource("17_lvh6o")
+volume_db = -4.0
+autoplay = true
+max_distance = 3500.0
+bus = &"SFXEnv"
 parameters/looping = true
 
 [connection signal="body_entered" from="InfoAreas/JumpInfoArea" to="." method="_on_jump_info_area_body_entered"]
