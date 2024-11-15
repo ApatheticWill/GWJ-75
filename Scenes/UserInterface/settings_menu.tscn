@@ -58,6 +58,7 @@ size_flags_vertical = 4
 layout_mode = 2
 size_flags_vertical = 3
 step = 10.0
+value = 50.0
 rounded = true
 scrollable = false
 
@@ -65,6 +66,7 @@ scrollable = false
 layout_mode = 2
 size_flags_vertical = 3
 step = 10.0
+value = 50.0
 rounded = true
 scrollable = false
 
@@ -72,6 +74,7 @@ scrollable = false
 layout_mode = 2
 size_flags_vertical = 3
 step = 10.0
+value = 50.0
 rounded = true
 scrollable = false
 
@@ -134,4 +137,7 @@ theme_override_styles/focus = SubResource("StyleBoxEmpty_3413q")
 text = "Return"
 flat = true
 
+[connection signal="value_changed" from="SettingsBar/Sliders/HSlider" to="." method="_on_h_slider_value_changed"]
+[connection signal="value_changed" from="SettingsBar/Sliders/HSlider2" to="." method="_on_h_slider_2_value_changed"]
+[connection signal="value_changed" from="SettingsBar/Sliders/HSlider3" to="." method="_on_h_slider_3_value_changed"]
 [connection signal="pressed" from="ReturnButton" to="." method="_on_return_button_pressed"]

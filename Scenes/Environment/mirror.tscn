@@ -7,7 +7,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0y7cr"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gsuh0"]
-size = Vector2(96, 66)
+size = Vector2(102, 66)
 
 [node name="Mirror" type="RigidBody2D"]
 collision_layer = 4
@@ -33,6 +33,7 @@ collision_layer = 4
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionZone"]
+position = Vector2(6, 0)
 shape = SubResource("RectangleShape2D_gsuh0")
 
 [connection signal="body_entered" from="InteractionZone" to="." method="_on_interaction_zone_body_entered"]

@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://dys1h3fpmulto"]
+[gd_scene load_steps=6 format=3 uid="uid://dys1h3fpmulto"]
 
 [ext_resource type="Script" path="res://Scripts/UserInterface/pause_menu.gd" id="1_qmvci"]
 [ext_resource type="PackedScene" uid="uid://b3ucytmm3fw3i" path="res://Scenes/UserInterface/settings_menu.tscn" id="2_tnagp"]
+[ext_resource type="PackedScene" uid="uid://cjk50626hbxwf" path="res://Scenes/UserInterface/transition_player.tscn" id="3_33mtb"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_iwmys"]
 
@@ -101,6 +102,10 @@ theme_override_font_sizes/font_size = 25
 theme_override_styles/focus = SubResource("StyleBoxEmpty_8337r")
 text = "Return To Menu"
 flat = true
+
+[node name="TransitionPlayer" parent="ButtonContainer" instance=ExtResource("3_33mtb")]
+visible = false
+layout_mode = 2
 
 [connection signal="pressed" from="ButtonContainer/ResumeButton" to="." method="_on_resume_button_pressed"]
 [connection signal="pressed" from="ButtonContainer/SettingsButton" to="." method="_on_settings_button_pressed"]

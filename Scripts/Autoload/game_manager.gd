@@ -11,6 +11,9 @@ var first_challenge_beaten : bool = false
 var second_challenge_beaten : bool = false
 var third_challenge_beaten : bool = false
 var challenges_beaten : bool = false
+var master_volume_value : float = 50
+var music_volume_value : float = 50
+var sfx_volume_value : float = 50
 
 func _ready() -> void:
 	

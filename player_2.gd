@@ -130,9 +130,10 @@ func _on_buffer_timer_timeout() -> void:
 
 func _on_hurt_box_area_entered(area: Area2D) -> void:
 	
-	if area.is_in_group("Hazard"):
+	if area.is_in_group("Hazard") || area.is_in_group("Mirror_Hazard"):
+		gui.transition_player.quick_transition()
 		can_move = false
-		Eventbus.player_died.emit()
+		
 		await get_tree().create_timer(0.2).timeout
 		self.global_position = GameManager.overworld_respawn_point
 		can_move = true

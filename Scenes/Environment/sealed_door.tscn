@@ -1,11 +1,10 @@
 [gd_scene load_steps=5 format=3 uid="uid://cpy24sww483rp"]
 
 [ext_resource type="Script" path="res://Scripts/Environment/sealed_door.gd" id="1_dg3el"]
+[ext_resource type="Texture2D" uid="uid://byin5xyv1b7ht" path="res://Assets/Environment/door_base.png" id="2_3rt3f"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pc3un"]
-size = Vector2(24, 48)
-
-[sub_resource type="CanvasTexture" id="CanvasTexture_0bh1y"]
+size = Vector2(20, 48)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1rlh2"]
 size = Vector2(56, 48)
@@ -19,8 +18,8 @@ displayed_text = "[center]Sealed by a strange power...[/center]"
 shape = SubResource("RectangleShape2D_pc3un")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(24, 48)
-texture = SubResource("CanvasTexture_0bh1y")
+scale = Vector2(0.17, 0.17)
+texture = ExtResource("2_3rt3f")
 
 [node name="InteractionZone" type="Area2D" parent="."]
 collision_layer = 4

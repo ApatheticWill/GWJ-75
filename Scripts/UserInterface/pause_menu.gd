@@ -4,9 +4,11 @@ class_name PauseMenu
 @onready var label: Label = $Label
 @onready var button_container: VBoxContainer = $ButtonContainer
 @onready var settings_menu: SettingsMenu = $SettingsMenu
+@onready var transition_player: TransitionPlayer = $ButtonContainer/TransitionPlayer
 
 func _ready() -> void:
 	
+	transition_player.hide()
 	Eventbus.hide_ui.connect(on_ui_hidden)
 
 func _on_resume_button_pressed() -> void:

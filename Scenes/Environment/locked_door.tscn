@@ -1,11 +1,10 @@
 [gd_scene load_steps=5 format=3 uid="uid://csqerh6fywqbl"]
 
 [ext_resource type="Script" path="res://Scripts/Environment/locked_door.gd" id="1_s4fue"]
-
-[sub_resource type="CanvasTexture" id="CanvasTexture_axr55"]
+[ext_resource type="Texture2D" uid="uid://byin5xyv1b7ht" path="res://Assets/Environment/door_base.png" id="2_vbs87"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qyq0s"]
-size = Vector2(24, 48)
+size = Vector2(20, 48)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_w33le"]
 size = Vector2(50, 48)
@@ -15,8 +14,8 @@ collision_mask = 2
 script = ExtResource("1_s4fue")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(24, 48)
-texture = SubResource("CanvasTexture_axr55")
+scale = Vector2(0.17, 0.17)
+texture = ExtResource("2_vbs87")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_qyq0s")
